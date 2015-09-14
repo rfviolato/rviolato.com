@@ -8,8 +8,11 @@
  * Controller of the rviolatocomApp
  */
 angular.module('rviolatocomApp')
-  .controller('RepositoriesCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('RepositoriesCtrl', RepositoriesCtrl);
 
+  RepositoriesCtrl.$inject = ['$scope', '$http'];
+
+  function RepositoriesCtrl($scope, $http) {
       var self = this;
       var isPagarme = new RegExp(/pagarme-ng-/);
       $scope.mainController.header.menuOpened = false;
@@ -34,6 +37,4 @@ angular.module('rviolatocomApp')
         $scope.$broadcast('repos-arrived');
 
       }
-
-
-  }]);
+  }
