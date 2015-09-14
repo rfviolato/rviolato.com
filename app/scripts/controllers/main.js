@@ -112,48 +112,64 @@ var multiLanguage = {
  * Controller of the rviolatocomApp
  */
 angular.module('rviolatocomApp')
-  .controller('MainCtrl', ['$rootScope', '$scope', '$location', function ($rootScope, $scope, $location) {
-      //window.myScope = $scope;
-      var self = this;
-      self.language = 'eng';
-      self.texts = multiLanguage.eng;
-      self.currentPage = $location.path().replace('/', '');
-      self.pageLoaded = false;
-      self.header = {
+  .controller('MainCtrl', MainCtrl);
+
+  MainCtrl.$inject = ['$rootScope', '$scope', '$location'];
+
+  function MainCtrl($rootScope, $scope, $location) {
+      var vm = this;
+      vm.language = 'eng';
+      vm.texts = multiLanguage.eng;
+      vm.currentPage = $location.path().replace('/', '');
+      vm.pageLoaded = false;
+      vm.header = {
           menuOpened: false,
-          openHeaderMenu: function(menu){
-              if(self.header.menuOpened === menu){
-                  self.header.menuOpened = '';
-              }else{
-                  self.header.menuOpened = menu;
-              }
-          },
+          openHeaderMenu: openHeaderMenu,
       };
   
-      self.setLanguage = function(lang){
+      vm.setLanguage = setLenguage;
+      var $routeChangeStart = $rootScope.$on('$routeChangeStart', routeChangeStart);
+      var $routeChangeSuccess = $rootScope.$on( '$routeChangeSuccess', routeChangeSuccess);
+      $scope.$on('background-load', bgLoad);
+      $scope.$on('$destroy', destroy);
+  
+
+      function setLenguage(lang){
           switch(lang){
               case 'eng':
-                  self.texts = multiLanguage.eng;
-                  self.language = 'eng';
+                  vm.texts = multiLanguage.eng;
+                  vm.language = 'eng';
               break;
               case 'pt':
-                  self.texts = multiLanguage.pt;
-                  self.language = 'pt';
+                  vm.texts = multiLanguage.pt;
+                  vm.language = 'pt';
               break;
           }
-      };
-  
-      $rootScope.$on('$routeChangeStart', function() {
-        self.loadingRoutePage = true;
-      });
+      }
 
-      $rootScope.$on( '$routeChangeSuccess', function() {
-        self.loadingRoutePage = false;
-        self.currentPage = $location.path().replace('/', '');
-      });
+      function routeChangeStart(){
+        vm.loadingRoutePage = true;
+      }
 
-      $scope.$on('background-load', function(){
-          self.pageLoaded = true;
-      });
-  
-    }]);
+      function routeChangeSuccess() {
+        vm.loadingRoutePage = false;
+        vm.currentPage = $location.path().replace('/', '');
+      }
+
+      function bgLoad(){
+        vm.pageLoaded = true;
+      }
+
+      function openHeaderMenu(menu){
+          if(vm.header.menuOpened === menu){
+              vm.header.menuOpened = '';
+          }else{
+              vm.header.menuOpened = menu;
+          }
+      }
+
+      function destroy() {
+        $routeChangeStart();
+        $routeChangeSuccess();
+      }
+    }
