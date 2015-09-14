@@ -8,29 +8,39 @@
  * Controller of the rviolatocomApp
  */
 angular.module('rviolatocomApp')
-  .controller('ProjectsCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-      var self = this;
+  .controller('ProjectsCtrl', ProjectsCtrl);
+
+  ProjectsCtrl.$inject = ['$scope', '$timeout'];
+
+  function ProjectsCtrl($scope, $timeout) {
+      var vm = this;
+
       $scope.mainController.header.menuOpened = false;
-      self.projects = {
+
+      vm.projects = {
           openedProject: -1,
           isOpened: false,
           phaseOne: false,
           phaseTwo: false,
       };
-      self.openProject = function(index){
-          self.projects.openedProject = index;
-          self.projects.phaseOne = true;
-          self.projects.isOpened = true;
+      vm.openProject = openProject;
+      vm.closeProject = closeProject;
+
+      function openProject(index){
+          vm.projects.openedProject = index;
+          vm.projects.phaseOne = true;
+          vm.projects.isOpened = true;
           $timeout(function(){
-              self.projects.phaseTwo = true;
+              vm.projects.phaseTwo = true;
           }, 750);
-      };
-      self.closeProject = function(){
-          self.projects.phaseTwo = false;
-          self.projects.isOpened = false;
+      }
+
+      function closeProject(){
+          vm.projects.phaseTwo = false;
+          vm.projects.isOpened = false;
           $timeout(function(){
-              self.projects.openedProject = -1;
-              self.projects.phaseOne = false;
+              vm.projects.openedProject = -1;
+              vm.projects.phaseOne = false;
           },750);
-      };
-    }]);
+      }
+    }
