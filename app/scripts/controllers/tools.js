@@ -8,19 +8,23 @@
  * Controller of the rviolatocomApp
  */
 
-var ToolsController = ['$scope', function($scope){
-	$scope.mainController.header.menuOpened = false;
-}];
+ angular.module('rviolatocomApp')
+  .controller('ToolsCtrl', ToolsController)
+  .config(config);
 
-var config = ['$routeProvider', function($routeProvider){
+var ToolsController = ['$scope'];
+
+function ToolsController($scope){
+	$scope.mainController.header.menuOpened = false;
+}
+
+config.$inject = ['$routeProvider'];
+
+function config($routeProvider){
 	$routeProvider
       .when('/tools', {
         templateUrl: 'views/tools.html',
         controller: 'ToolsCtrl',
         controllerAs: 'toolsController',
       });
-}];
-
-angular.module('rviolatocomApp')
-  .controller('ToolsCtrl', ToolsController)
-  .config(config);
+}
