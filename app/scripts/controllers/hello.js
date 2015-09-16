@@ -8,7 +8,13 @@
  * Controller of the rviolatocomApp
  */
 
-var HelloCtrl = ['$scope', '$timeout', function($scope, $timeout){
+angular.module('rviolatocomApp')
+  .controller('HelloCtrl', HelloCtrl)
+  .config(config);
+
+HelloCtrl.$inject = ['$scope', '$timeout'];
+
+function HelloCtrl($scope, $timeout){
 	var self = this;
 	$scope.mainController.menuOpened = false;
 	self.state = {
@@ -29,9 +35,11 @@ var HelloCtrl = ['$scope', '$timeout', function($scope, $timeout){
 		$scope.$on('background-load', start);		
 	}
 
-}];
+}
 
-var config = ['$routeProvider', function($routeProvider){
+config.$inject = ['$routeProvider'];
+
+function config($routeProvider){
 	$routeProvider	
 	  .when('/', {
 	    templateUrl: 'views/hello.html',
@@ -39,7 +47,4 @@ var config = ['$routeProvider', function($routeProvider){
 	    controllerAs: 'helloController',
 	    resolve: HelloCtrl.init,
 	  });
-}];
-angular.module('rviolatocomApp')
-  .controller('HelloCtrl', HelloCtrl)
-  .config(config);
+}
