@@ -1,0 +1,28 @@
+@import "mixings-and-data.scss";
+
+#tools{
+	$ellipseSize: 115px;
+	$margin: 10px;
+	.row{
+		position: relative;
+		width: 100%;
+		height: $ellipseSize;
+		&:not(:last-child){margin-bottom:$margin;}
+	}
+	.tools-list{margin-top: 40px;}
+	.tool{
+		@include circle($ellipseSize);
+		border-width:3px;
+		display: inline-block;
+		background-size: 75% 75%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		&:not(:first-child){margin-left:($margin + 5px);}
+		&.first{background-image: image-url("html5_css3.png"); background-size:70% 42%; }
+		&.second{background-image: image-url("angular.png");}
+		&.third{background-image: image-url("jquery.png");}
+		&.fourth{background-image: image-url("grunt.png"); background-size: 50% 75%;}
+		&.fifth{background-image: image-url("bower.png");}
+		&.sixth{background-image: image-url("yeoman.png");}
+	}
+}

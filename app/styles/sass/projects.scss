@@ -1,0 +1,185 @@
+@import "mixings-and-data.scss";
+
+#projects{
+	$time: .75s;
+	$options: $time cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	$size: 150px;
+	$margin: 20px;
+	$width: (($size + $margin) * 4);
+	$openedHeight: 375px;
+	.projects-wrapper{
+		position: relative;
+		width: $width;
+		height:$size;
+		margin:25px auto 0;
+		transition: height $options;
+		overflow:visible;
+		&.project-opened{
+			height:$openedHeight;
+		}
+	}
+	.projects-holder{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 9999px;
+		height: 100%;
+	}
+	.projects-row{
+		position: relative;
+		display:block;
+		width: $width;
+		height: 100%;
+		text-align: center;
+		.first{left:0px;}
+		.second{left: $size + $margin;}
+		.third{left: (($size + $margin) * 2);}
+		.fourth{left: (($size + $margin) * 3);}
+	}
+	.project{
+		position: absolute;
+		top:0;
+		z-index:400;
+		@include circle($size);
+		height:100% !important;
+		display:inline-block;
+		opacity:.7;
+		transition: opacity .3s ease-out, border-radius $options, left $options, transform $options, width $options;
+		overflow:hidden;
+		/* fix do bug da animação das bordas */
+	    -webkit-transform: translateZ(0);
+	    //-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+		.front-image{
+			position: absolute;
+			top:0;
+			left:0;
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			z-index: 400;
+			transition: opacity $options;
+			/* fix do bug da animação das bordas */
+			-webkit-background-clip: padding-box;
+			-moz-background-clip:    padding;
+			background-clip:         padding-box;
+			&.ng-hide{opacity:0;}
+		}
+		.opened-content{
+			position: absolute;
+			top:0;
+			left:0;
+			z-index: 200;
+			width: $width;
+			height: $openedHeight;
+			background-color: #181818;
+			transition: opacity $options;
+			&.ng-hide{opacity:0;}
+		}
+		.front-image, .project-background{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;			
+		}
+		.project-background{
+			position: absolute;
+			top:0;
+			left:0;
+			height: 100%;
+			width: 100%;
+			z-index:100;
+		}
+		$ellipse: 35px;
+		.close-button, .visit-website-button{
+			position: absolute;
+			top:10px;
+			z-index:800;
+			padding-top: 5px;
+			cursor:pointer;
+			@include circle($ellipse);
+		}
+		.close-button{
+			@include noSelection();
+			right:20px;
+			font-family: $displayFontBold;
+			font-size: 17px;
+			span{transition: color .45s ease;}
+		}
+		.visit-website-button{
+			right: $ellipse + 27px;
+			text-align:center;
+			font-size: 17px;
+		}
+		.info{
+			position: absolute;
+			top:0;
+			left:0;
+			z-index:400;
+			color:white;
+			text-align: left;
+			width:  100%;
+			height: 100%;
+			padding: 0 30px;
+		}
+		.info-row{
+			.title{
+				font-size: 24px;
+				font-family: $displayFontBold;
+			}
+			.text{
+				margin-top: 3px;
+				font-size: 16px;
+				line-height: 22px;
+			}
+			&:not(:last-child){margin-bottom: 20px;}
+		}
+		&:hover{ opacity: 1; }
+		&.cachola{
+			.front-image{
+				background-image: image-url("cachola.jpg");
+			}
+			.project-background{
+				opacity:.1;
+				background-image: image-url("projectBG_cachola.png");
+			}
+		}
+		&.kanhamus{
+			.front-image{
+				background-image: image-url("kanhamus.jpg");
+			}
+			.project-background{
+				opacity:.125;
+				background-image: image-url("projectBG_kanhamus.png");
+			}			
+		}
+		&.foodmood{
+			.front-image{
+				background-image: image-url("foodmood.jpg");
+			}
+			.project-background{
+				opacity:.2;
+				background-image: image-url("projectBG_foodmood.png");
+			}			
+		}
+		&.prospera{
+			.front-image{
+				background-image: image-url("prospera.jpg");
+			}
+			.project-background{
+				opacity:.125;
+				background-image: image-url("projectBG_prospera.png");
+			}						
+		}
+		&.pagarme{
+			.front-image{
+				background-image: image-url("pagarme.jpg");
+			}
+			.project-background{
+				opacity:.125;
+				background-image: image-url("projectBG_pagarme.png");
+			}						
+		}		
+		&.clicked{ border-radius: 2px; left:0; opacity:1 !important;}
+		&.opened{ width: $width; }
+		&.ng-hide{ opacity:0; transform: translate3d(0,50px,0);}
+	}
+}

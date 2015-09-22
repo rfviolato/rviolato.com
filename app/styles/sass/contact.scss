@@ -1,0 +1,165 @@
+@import "mixings-and-data.scss";
+
+#contact{
+	.form-wrapper{
+		position: relative;
+		margin: 35px auto 0;
+		width: 80%;
+		height: 325px;
+	}
+	.logo{
+		background-size: 100%;
+		height: 130px;
+		width: 130px;
+		margin: 0 0 15px 28px;
+	}
+	.form{
+		$normalBgColor: rgba(0,0,0,.5);
+		$activeBgColor: rgba(0,0,0,.65);		
+		width: 70%;
+		height: 100%;
+		text-align: left;
+		padding-left: 25px;
+		.title{font-family: $displayFontRegular; font-size: 34px;}
+		.description{font-size: 22px; margin: 13px 0 20px 0 ; }		
+		.input-wrapper{
+			$padding: 10px;
+			width: 85%;
+			&:not(:last-child){margin-bottom: 2px;}
+			input, textarea{
+				width: 100%;
+				border:0;
+				outline:0;
+				margin:0;
+				padding: 0 0 0 $padding ;
+				border-radius: 2px;
+				background-color: $normalBgColor;
+				transition: background-color .2s linear;
+				&:focus{background-color: $activeBgColor;}
+				@mixin font() {
+					color:$defaultFontColor;
+					font-size: 15px;
+					font-family: $textFont;
+				}
+				@include font();
+				&::-webkit-input-placeholder {
+				   @include font();
+				}
+
+				&:-moz-placeholder { /* Firefox 18- */
+				   @include font();  
+				}
+
+				&::-moz-placeholder {  /* Firefox 19+ */
+				   @include font();  
+				}
+
+				&:-ms-input-placeholder {  
+				   @include font();  
+				}				
+
+			}
+			input{height:30px;}
+			textarea{height: 150px; resize: none; padding-top: 7px; overflow: auto;}
+		}
+		//vars
+		$border:1px;
+		$buttonWidth:90px;
+		$initialColor: $defaultFontColor;
+		$finalBorderColor: white;
+		$options: 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+		.lines-wrapper{
+		  position:absolute;
+		  top:0;
+		  left:0;
+		  z-index:10;
+		  width:100%;
+		  height:100%;
+		}
+		.button-face{
+		    position:absolute;
+		    width:100%;
+		    height:100%;
+		    top:0;
+		    left:0;  
+		    z-index:100;
+		    background-color:rgba(0,0,0, .5);
+		    color:$initialColor;
+		    padding: 8px 0 0 0 ;
+		    transition:all $options;
+		    &:hover{background-color:rgba(0,0,0, .65);}
+		}
+		.line{
+		    background-color:$finalBorderColor;
+		    position:absolute;
+		    transition: width $options, height $options;
+		  
+		    &.right, &.left{
+		      width:$border;
+		      height:0%;      
+		    }
+		    &.top, &.bottom{
+		      height:$border;
+		      width:0%;      
+		    }
+		    &.top{
+		      left:-$border;
+		      top:-$border;
+		    }
+		    &.left{
+		      left:-$border;
+		      bottom:0;    
+		    }
+		    &.right{
+		      right:-$border;
+		      top:0;      
+		    }
+		    &.bottom{
+		      right:-$border;
+		      bottom:-$border;
+		    }
+		}
+		.send-button{
+		    position:relative;
+		    width:$buttonWidth;
+		    height:40px;
+		    font-size: 16px;
+		    line-height:24px;
+		    font-family: Sans-serif;
+		    text-align:center;
+		    margin: 0 auto ;
+		    border:$border solid $initialColor;
+		    border-radius: 2px;
+		    cursor:pointer;
+		    @include noSelection();
+		    &:hover{
+		      .button-face{
+		        color:$finalBorderColor;
+		      }
+		      .line.top, .line.bottom{
+		        width:$buttonWidth;      
+		      }
+		      .line.left, .line.right{
+		        height:100%;      
+		      }      
+		    }
+		}			
+	}
+	.contact-info{width: 30%;height: 100%;}
+	.info{
+		$size: 35px;
+		width: 100%;
+		height: $size;
+		.icon{width: $size; height: 100%;}
+		.ss-mail{padding-top: 8px;}
+		.ss-home{padding-top: 4px}
+		img{width: $size / 2; height: $size / 2; margin-top: 4px;}
+		.text{
+			@include calc(width, "100% - #{$size}");
+			text-align: left;
+			padding-left:12.5px;
+			height: 100%;
+			font-family: $textFont;
+		}
+	}
+}
