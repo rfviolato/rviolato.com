@@ -6,7 +6,10 @@ var browser = require('browser-sync');
 /* Config */
 var config = require('./config');
 
-gulp.task('browser', function() {
+/* Task */
+gulp.task('browser', browserTask);
+
+function browserTask() {
 	var browserConfig;
 	if(gutil.env.dist){
 	    browserConfig = {
@@ -25,4 +28,4 @@ gulp.task('browser', function() {
 	}
 
 	browser(browserConfig);
-});
+}
