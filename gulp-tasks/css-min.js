@@ -10,9 +10,9 @@ var config = require('./config');
 gulp.task('cssMin', cssMinTask);
 
 function cssMinTask() {
-	return gulp.src(config.paths.css + 'main.css')
+	return gulp.src(config.paths.src + config.paths.css + 'main.css')
 			   .pipe(sourcemaps.init())
 			   .pipe(cssMin())
 			   .pipe(sourcemaps.write('.'))
-			   .pipe(gulp.dest(config.paths.css));
+			   .pipe(gulp.dest(config.paths.src + config.paths.css));
 }

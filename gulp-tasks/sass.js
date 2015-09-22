@@ -9,7 +9,7 @@ var config = require('./config');
 gulp.task('sass', sassTask);
 
 function sassTask() {
-	return gulp.src(config.paths.sass + 'main.scss')
+	return gulp.src(config.paths.src + config.paths.sass + 'main.scss')
 			   .pipe(sass().on('error', sass.logError))
-			   .pipe(gulp.dest(config.paths.css));
+			   .pipe(gulp.dest(config.paths.src + config.paths.css));
 }

@@ -10,12 +10,15 @@ var config = require('./config');
 gulp.task('inject', injectTask);
 
 function injectTask() {
-  var files = [config.paths.scripts + '**/*.js', config.paths.css + '**/*.css'];
+  var files = [
+  				config.paths.scripts + '**/*.js',
+  				config.paths.css + '**/*.css'
+  			  ];
   var target = gulp.src(config.paths.src + 'index.html');
-  var sources = gulp.src(files, {read: false});
+  var sources = gulp.src(files, {read: false, cwd: config.paths.src});
  
   return target
-			.pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
+			.pipe(inject(gulp.src(bowerFiles(), {read: false, cwd: config.paths.src}), {name: 'bower'}))
 			.pipe(inject(sources))
   	 		.pipe(gulp.dest(config.paths.src));
 }
