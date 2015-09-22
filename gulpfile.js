@@ -1,1 +1,2 @@
-var gulp = require('gulp');
+require('./gulp-tasks/server.js');
+require('./gulp-tasks/browser.js');
