@@ -1,8 +1,8 @@
-var basePaths = {
+var paths = {
 	src: './app/',
 	dist: './dist/',
 };
 
 module.exports = {
-	basePaths: basePaths
+	paths: paths
 };

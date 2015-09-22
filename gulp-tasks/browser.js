@@ -11,14 +11,14 @@ gulp.task('browser', function() {
 	if(gutil.env.dist){
 	    browserConfig = {
 	        server: {
-	            baseDir: config.basePaths.dist,
+	            baseDir: config.paths.dist,
 	        },
 	        port: 8000
 	    };
 	}else{
 	    browserConfig = {
 	        server: {
-	            baseDir: config.basePaths.src,
+	            baseDir: config.paths.src,
 	        },
 	        port: 9000
 	    };
