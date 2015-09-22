@@ -2,7 +2,7 @@
 <html class="no-js" ng-app="rviolatocomApp">
   <head>
     <meta charset="utf-8">
-    <title>Rafael Violato</title>
+    <title>rviolato.com</title>
     <link rel="icon" type="image/png" href="images/logo_favicon.png">
     <meta name="description" content="Rafael Violato - Web interface developer">
     <meta name="viewport" content="width=device-width">
@@ -13,6 +13,7 @@
     <meta property="og:url" content="http://www.rviolato.com"/>
     <meta property="og:image" content="images/site_preview.png"/>
     <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/css/main.css">
     <!-- endinject -->
   </head>
   <body data-ng-controller="MainCtrl as mainController" data-ng-class="{'loading-cursor': mainController.loadingRoutePage === true || mainController.pageLoaded === false}">
@@ -163,6 +164,28 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
+
+    <!-- bower:js -->
+    
+    <script src="/bower_components/angular/angular.js"></script>
+    
+    <script src="/bower_components/json3/lib/json3.js"></script>
+    
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    
+    <!-- endinject -->
 
     <!-- inject:js -->
     <script src="/app/scripts/app.js"></script>
