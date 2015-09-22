@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
-gulp.task('default', server);
+var tasks = [
+	'browser'
+];
 
-function server() {
-	
-}
+gulp.task('default', tasks);

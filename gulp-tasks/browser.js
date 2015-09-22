@@ -1,12 +1,28 @@
+/* Dependencies */
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var browser = require('browser-sync');
+
+/* Config */
 var config = require('./config');
 
 gulp.task('browser', function() {
-    browser({
-        server: {
-            baseDir: config.basePaths.dist,
-        },
-        port: 3000
-    });
+	var browserConfig;
+	if(gutil.env.dist){
+	    browserConfig = {
+	        server: {
+	            baseDir: config.basePaths.dist,
+	        },
+	        port: 8000
+	    };
+	}else{
+	    browserConfig = {
+	        server: {
+	            baseDir: config.basePaths.src,
+	        },
+	        port: 9000
+	    };
+	}
+
+	browser(browserConfig);
 });
