@@ -1,8 +1,8 @@
 var paths = {
 	src: './app/',
 	dist: './dist/',
-	sassPath: './app/styles/sass/',
-	cssPath: './app/styles/css/'
+	sass: './app/styles/sass/',
+	css: './app/styles/css/'
 };
 
 module.exports = {
