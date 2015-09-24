@@ -8,7 +8,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var config = require('./config');
 
 /* Task */
-gulp.task('cssMin', cssMinTask);
+gulp.task('css-min', cssMinTask);
 
 function cssMinTask() {
 
