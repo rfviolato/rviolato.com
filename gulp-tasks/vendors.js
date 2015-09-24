@@ -5,8 +5,8 @@ var gulp = require('gulp');
 var config = require('./config');
 
 var taskList = [
-	'js-concat',
-	'js-min'
+	'vendors-concat',
+	'vendors-min'
 ];
 
 /* Task */
