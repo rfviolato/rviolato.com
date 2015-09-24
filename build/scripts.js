@@ -43,6 +43,159 @@ angular
 'use strict';
 
 /**
+ * @ngdoc directive
+ * @name rviolatocomApp.directive:background
+ * @description
+ * # background
+ */
+angular.module('rviolatocomApp')
+  .directive('background', function ($rootScope) {
+    return {
+      restrict: 'C',
+      replace: true,
+      link: function postLink(scope, element) {
+        var url = window.getComputedStyle(element[0]).backgroundImage
+          .replace('url(', '')
+          .replace(')', '')
+          .replace(/"/g, '');
+        var dummyImg = document.createElement('img');
+        var load = function(){
+            element.css('background-image', 'url('+url+')');
+            element.addClass('loaded');
+            $rootScope.$broadcast('background-load', {
+              status: 'loaded',
+            });
+        };
+        var error = function(){
+        	console.error('background image loading error :/');
+        	$rootScope.$broadcast('background-load', {
+        		status: 'error',
+        	});        	
+        };
+
+        dummyImg.addEventListener('load', load);
+        dummyImg.addEventListener('error', error);
+        dummyImg.src = url;
+
+      	if (dummyImg.complete) {
+  			 load();
+      	}
+      }
+    };
+  });
+
+'use strict';
+
+/**
+ * @ngdoc directive
+ * @name rviolatocomApp.directive:repository
+ * @description
+ * # repository
+ */
+angular.module('rviolatocomApp')
+  .directive('repositories', function ($timeout) {
+    return {
+      link: function postLink($scope, $element) {//scope, element, attrs
+
+        $scope.$on('repos-arrived', function(){
+          $timeout(function(){
+            $element.addClass('repos-arrived');
+          }, 500);
+          $timeout(function(){
+            var h = $element.prop('offsetHeight');
+            $element.css('height', h + 'px');
+          });
+        });
+
+      }
+    };
+  });
+
+'use strict';
+
+/**
+ * @ngdoc directive
+ * @name rviolatocomApp.directive:tooltipTrigger
+ * @description
+ * # tooltipTrigger
+ */
+angular.module('rviolatocomApp')
+  .directive('tooltipTrigger', function ($rootScope) {
+    return {
+      restrict: 'C',
+      link: function postLink(scope, element, attrs) {
+        element.on('mouseenter', function(){
+        	$rootScope.$broadcast('tooltip', {
+        		show: true,
+        		text: attrs.tooltipText,
+        	});
+        });
+
+        element.on('mouseleave click', function(){
+        	$rootScope.$broadcast('tooltip', {
+        		show: false,
+        	});        	
+        });
+      }
+    };
+  });
+
+'use strict';
+
+/**
+ * @ngdoc directive
+ * @name rviolatocomApp.directive:tooltip
+ * @description
+ * # tooltip
+ */
+angular.module('rviolatocomApp')
+  .directive('tooltip', function () {
+    return {
+      restrict: 'C',
+      link: function postLink(scope, element) {
+      	var x = 0;
+      	var y = 0;
+      	scope.tooltip = {
+			showing: false,
+      	};
+      	var moveTooltip = function(){
+    		var _width = element.prop('offsetWidth');
+    		var _height = element.prop('offsetHeight');      		
+    		element.css({
+    			'top': (y + (_height) - 5)+'px',
+    			'left': (x - (_width/2) + 7)+'px',
+    		});
+      	};
+        document.addEventListener('mousemove', function(_event){
+        	x = _event.pageX || _event.clientX;
+        	y = _event.pageY || _event.clientY;
+        	if(scope.tooltip.showing){
+        		moveTooltip();
+        	}
+        });
+        scope.$on('tooltip', function(_event, _data){
+        	if(_data.show){
+				element.text(_data.text);
+        		moveTooltip();
+        		element.addClass('show');
+        		scope.$apply(function(){
+        			scope.tooltip.showing = true;
+        		});
+        	}else{
+        		element.removeClass('show');
+        		scope.$apply(function(){
+        			scope.tooltip.showing = false;
+        		});
+        	}
+        });
+
+      }
+    };
+  });
+
+'use strict';
+
+/**
  * @ngdoc function
  * @name rviolatocomApp.controller:ContactCtrl
  * @description
@@ -480,159 +633,6 @@ function config($routeProvider){
         controllerAs: 'toolsController',
       });
 }
-
-'use strict';
-
-/**
- * @ngdoc directive
- * @name rviolatocomApp.directive:background
- * @description
- * # background
- */
-angular.module('rviolatocomApp')
-  .directive('background', function ($rootScope) {
-    return {
-      restrict: 'C',
-      replace: true,
-      link: function postLink(scope, element) {
-        var url = window.getComputedStyle(element[0]).backgroundImage
-          .replace('url(', '')
-          .replace(')', '')
-          .replace(/"/g, '');
-        var dummyImg = document.createElement('img');
-        var load = function(){
-            element.css('background-image', 'url('+url+')');
-            element.addClass('loaded');
-            $rootScope.$broadcast('background-load', {
-              status: 'loaded',
-            });
-        };
-        var error = function(){
-        	console.error('background image loading error :/');
-        	$rootScope.$broadcast('background-load', {
-        		status: 'error',
-        	});        	
-        };
-
-        dummyImg.addEventListener('load', load);
-        dummyImg.addEventListener('error', error);
-        dummyImg.src = url;
-
-      	if (dummyImg.complete) {
-  			 load();
-      	}
-      }
-    };
-  });
-
-'use strict';
-
-/**
- * @ngdoc directive
- * @name rviolatocomApp.directive:repository
- * @description
- * # repository
- */
-angular.module('rviolatocomApp')
-  .directive('repositories', function ($timeout) {
-    return {
-      link: function postLink($scope, $element) {//scope, element, attrs
-
-        $scope.$on('repos-arrived', function(){
-          $timeout(function(){
-            $element.addClass('repos-arrived');
-          }, 500);
-          $timeout(function(){
-            var h = $element.prop('offsetHeight');
-            $element.css('height', h + 'px');
-          });
-        });
-
-      }
-    };
-  });
-
-'use strict';
-
-/**
- * @ngdoc directive
- * @name rviolatocomApp.directive:tooltipTrigger
- * @description
- * # tooltipTrigger
- */
-angular.module('rviolatocomApp')
-  .directive('tooltipTrigger', function ($rootScope) {
-    return {
-      restrict: 'C',
-      link: function postLink(scope, element, attrs) {
-        element.on('mouseenter', function(){
-        	$rootScope.$broadcast('tooltip', {
-        		show: true,
-        		text: attrs.tooltipText,
-        	});
-        });
-
-        element.on('mouseleave click', function(){
-        	$rootScope.$broadcast('tooltip', {
-        		show: false,
-        	});        	
-        });
-      }
-    };
-  });
-
-'use strict';
-
-/**
- * @ngdoc directive
- * @name rviolatocomApp.directive:tooltip
- * @description
- * # tooltip
- */
-angular.module('rviolatocomApp')
-  .directive('tooltip', function () {
-    return {
-      restrict: 'C',
-      link: function postLink(scope, element) {
-      	var x = 0;
-      	var y = 0;
-      	scope.tooltip = {
-			showing: false,
-      	};
-      	var moveTooltip = function(){
-    		var _width = element.prop('offsetWidth');
-    		var _height = element.prop('offsetHeight');      		
-    		element.css({
-    			'top': (y + (_height) - 5)+'px',
-    			'left': (x - (_width/2) + 7)+'px',
-    		});
-      	};
-        document.addEventListener('mousemove', function(_event){
-        	x = _event.pageX || _event.clientX;
-        	y = _event.pageY || _event.clientY;
-        	if(scope.tooltip.showing){
-        		moveTooltip();
-        	}
-        });
-        scope.$on('tooltip', function(_event, _data){
-        	if(_data.show){
-				element.text(_data.text);
-        		moveTooltip();
-        		element.addClass('show');
-        		scope.$apply(function(){
-        			scope.tooltip.showing = true;
-        		});
-        	}else{
-        		element.removeClass('show');
-        		scope.$apply(function(){
-        			scope.tooltip.showing = false;
-        		});
-        	}
-        });
-
-      }
-    };
-  });
 
 /*
 * Symbolset

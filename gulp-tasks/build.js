@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 
 var taskList = [
+	'clean-build',
 	'scripts',
 	'vendors',
 ];
