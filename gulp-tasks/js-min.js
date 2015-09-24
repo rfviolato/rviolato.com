@@ -1,5 +1,8 @@
 /* Dependencies */
 var gulp = require('gulp');
+var ngmin = require('gulp-ngmin');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 
 /* Config */
 var config = require('./config');
@@ -8,5 +11,9 @@ var config = require('./config');
 gulp.task('js-min', jsMinTask);
 
 function jsMinTask() {
-	return gulp.src(config.paths.src + 'scripts.js');
+	return gulp.src(config.paths.build + 'scripts.js')
+		   	   .pipe(ngmin())
+		   	   .pipe(uglify())
+		   	   .pipe(rename('scripts.min.js'))
+		   	   .pipe(gulp.dest(config.paths.build));
 }
