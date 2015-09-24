@@ -22,7 +22,7 @@ body{
 	top:0;
 	right:-30%;
 	opacity:0;
-	background-image: url(../../../images/main_background.jpg);
+	background-image: url($imagePath + 'main_background.jpg');
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center top;
@@ -140,7 +140,7 @@ article{
 
 .logo{
 	display:block;	
-	background-image: image-url('logo.png');
+	background-image: url($imagePath + 'logo.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 70%;	
@@ -151,7 +151,7 @@ article{
 
 .avatar{
 	display:block;
-	background-image: image-url("avatar-quadrado.png");
+	background-image: url($imagePath + 'avatar-quadrado.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;

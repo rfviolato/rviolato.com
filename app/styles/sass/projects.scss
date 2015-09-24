@@ -44,7 +44,11 @@
 		height:100% !important;
 		display:inline-block;
 		opacity:.7;
-		transition: opacity .3s ease-out, border-radius $options, left $options, transform $options, width $options;
+		transition: opacity .3s ease-out,
+					border-radius $options,
+					left $options,
+					transform $options,
+					width $options;
 		overflow:hidden;
 		/* fix do bug da animação das bordas */
 	    -webkit-transform: translateZ(0);
@@ -135,47 +139,20 @@
 		&:hover{ opacity: 1; }
 		&.cachola{
 			.front-image{
-				background-image: image-url("cachola.jpg");
+				background-image: url($fontPath + 'cachola.jpg');
 			}
 			.project-background{
 				opacity:.1;
-				background-image: image-url("projectBG_cachola.png");
+				background-image: url($fontPath + 'projectBG_cachola.png');
 			}
-		}
-		&.kanhamus{
-			.front-image{
-				background-image: image-url("kanhamus.jpg");
-			}
-			.project-background{
-				opacity:.125;
-				background-image: image-url("projectBG_kanhamus.png");
-			}			
-		}
-		&.foodmood{
-			.front-image{
-				background-image: image-url("foodmood.jpg");
-			}
-			.project-background{
-				opacity:.2;
-				background-image: image-url("projectBG_foodmood.png");
-			}			
-		}
-		&.prospera{
-			.front-image{
-				background-image: image-url("prospera.jpg");
-			}
-			.project-background{
-				opacity:.125;
-				background-image: image-url("projectBG_prospera.png");
-			}						
 		}
 		&.pagarme{
 			.front-image{
-				background-image: image-url("pagarme.jpg");
+				background-image: url($fontPath + 'pagarme.jpg');
 			}
 			.project-background{
 				opacity:.125;
-				background-image: image-url("projectBG_pagarme.png");
+				background-image: url($fontPath + 'projectBG_pagarme.png');
 			}						
 		}		
 		&.clicked{ border-radius: 2px; left:0; opacity:1 !important;}

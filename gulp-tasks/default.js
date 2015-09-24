@@ -2,8 +2,7 @@
 var gulp = require('gulp');
 
 var tasks = [
-	'sass',
-	'cssMin',
+	'style',
 	'inject',
 	'browser'
 ];
