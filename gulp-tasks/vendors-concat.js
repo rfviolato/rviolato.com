@@ -7,7 +7,7 @@ var bowerFiles = require('main-bower-files');
 var config = require('./config');
 
 /* Task */
-gulp.task('vendors', vendorsTask);
+gulp.task('vendors-concat', vendorsTask);
 
 function vendorsTask() {
 	return gulp.src(bowerFiles())

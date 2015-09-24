@@ -1,17 +1,10 @@
 /* Dependencies */
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-/* Config */
-var config = require('./config');
 
 var taskList = [
-	
+	'scripts',
+	'vendors',
 ];
 
 /* Task */
-gulp.task('build', taskList, buildTask);
-
-function buildTask() {
-	
-}
+gulp.task('build', taskList);
