@@ -8,21 +8,29 @@
  */
 angular.module('rviolatocomApp')
   .directive('tooltipTrigger', function ($rootScope) {
-    return {
+    var directive = {
       restrict: 'C',
-      link: function postLink(scope, element, attrs) {
-        element.on('mouseenter', function(){
-        	$rootScope.$broadcast('tooltip', {
-        		show: true,
-        		text: attrs.tooltipText,
-        	});
-        });
+      link: postLink
+    };
 
-        element.on('mouseleave click', function(){
-        	$rootScope.$broadcast('tooltip', {
-        		show: false,
-        	});        	
+    return directive;
+
+    function postLink(scope, element, attrs) {
+      element.on('mouseenter', mouseenter);
+
+      element.on('mouseleave click', mouseleave);
+
+      function mouseleave(){
+        $rootScope.$broadcast('tooltip', {
+          show: false,
         });
       }
-    };
+
+      function mouseenter(){
+        $rootScope.$broadcast('tooltip', {
+          show: true,
+          text: attrs.tooltipText,
+        });
+      }
+    }
   });
