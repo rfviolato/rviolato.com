@@ -7,20 +7,33 @@
  * # repository
  */
 angular.module('rviolatocomApp')
-  .directive('repositories', function ($timeout) {
-    return {
-      link: function postLink($scope, $element) {//scope, element, attrs
+  .directive('repositories', repositories);
 
-        $scope.$on('repos-arrived', function(){
-          $timeout(function(){
-            $element.addClass('repos-arrived');
-          }, 500);
-          $timeout(function(){
-            var h = $element.prop('offsetHeight');
-            $element.css('height', h + 'px');
-          });
-        });
+  repositories.$inject = ['$timeout'];
 
-      }
+  function repositories($timeout) {
+    var directive = {
+      link: postLink
     };
-  });
+
+    return directive;
+
+    function postLink($scope, $element) {
+      var $repos = $scope.$on('repos-arrived', reposArrived);
+      $scope.$on('$destroy', destroy);
+
+      function reposArrived(){
+        $timeout(function(){
+          $element.addClass('repos-arrived');
+        }, 500);
+        $timeout(function(){
+          var h = $element.prop('offsetHeight');
+          $element.css('height', h + 'px');
+        });
+      }
+
+      function destroy() {
+        $repos();
+      }
+    }
+  }
