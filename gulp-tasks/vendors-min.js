@@ -10,8 +10,8 @@ var config = require('./config');
 gulp.task('vendors-min', ['vendors-concat'], vendorsMinTask);
 
 function vendorsMinTask() {
-	return gulp.src(config.paths.build + 'vendors.js')
+	return gulp.src(config.paths.dist + 'build/vendors.js')
 		   .pipe(uglify())
 		   .pipe(rename('vendors.min.js'))
-		   .pipe(gulp.dest(config.paths.build));
+		   .pipe(gulp.dest(config.paths.dist + 'build/'));
 }

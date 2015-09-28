@@ -24,5 +24,5 @@ function cssMinTask() {
 			   .pipe(cssMin())
 			   .pipe(rename('main.min.css'))
 			   .pipe(sourcemaps.write('.'))
-			   .pipe(gulp.dest(config.paths.build));
+			   .pipe(gulp.dest(config.paths.dist + 'build/'));
 }

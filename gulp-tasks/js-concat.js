@@ -11,5 +11,5 @@ gulp.task('js-concat', jsConcatTask);
 function jsConcatTask() {
 	return gulp.src(config.paths.src + 'scripts/**/*.js')
 		   .pipe(concat('scripts.js'))
-		   .pipe(gulp.dest(config.paths.build));
+		   .pipe(gulp.dest(config.paths.dist + 'build/'));
 }

@@ -12,5 +12,5 @@ gulp.task('vendors-concat', vendorsTask);
 function vendorsTask() {
 	return gulp.src(bowerFiles())
 		   .pipe(concat('vendors.js'))
-		   .pipe(gulp.dest(config.paths.build));
+		   .pipe(gulp.dest(config.paths.dist + 'build/'));
 }

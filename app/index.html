@@ -13,7 +13,7 @@
     <meta property="og:url" content="http://www.rviolato.com"/>
     <meta property="og:image" content="images/site_preview.png"/>
     <!-- inject:css -->
-    <link rel="stylesheet" href="/styles/css/main.css">
+    <link rel="stylesheet" href="../build/main.min.css">
     <!-- endinject -->
   </head>
   <body data-ng-controller="MainCtrl as mainController" data-ng-class="{'loading-cursor': mainController.loadingRoutePage === true || mainController.pageLoaded === false}">
@@ -178,18 +178,8 @@
     <!-- endinject -->
 
     <!-- inject:js -->
-    <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/contact.js"></script>
-    <script src="/scripts/controllers/hello.js"></script>
-    <script src="/scripts/controllers/main.js"></script>
-    <script src="/scripts/controllers/projects.js"></script>
-    <script src="/scripts/controllers/repositories.js"></script>
-    <script src="/scripts/controllers/tools.js"></script>
-    <script src="/scripts/directives/background.js"></script>
-    <script src="/scripts/directives/repositories.js"></script>
-    <script src="/scripts/directives/tooltip-trigger.js"></script>
-    <script src="/scripts/directives/tooltip.js"></script>
-    <script src="/scripts/vendor/ss-standard.js"></script>
+    <script src="../build/scripts.min.js"></script>
+    <script src="../build/vendors.min.js"></script>
     <!-- endinject -->
 
 </body>
