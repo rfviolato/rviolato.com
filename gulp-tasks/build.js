@@ -3,8 +3,9 @@ var gulp = require('gulp');
 
 var taskList = [
 	'clean-build',
-	'scripts',
-	'vendors',
+	'js-min',
+	'css-min',
+	'vendors-min',
 ];
 
 /* Task */

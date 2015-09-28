@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 
 var tasks = [
-	'style',
+	'build',
 	'inject',
 	'browser'
 ];

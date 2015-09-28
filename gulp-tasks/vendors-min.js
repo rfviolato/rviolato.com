@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var config = require('./config');
 
 /* Task */
-gulp.task('vendors-min', vendorsMinTask);
+gulp.task('vendors-min', ['vendors-concat'], vendorsMinTask);
 
 function vendorsMinTask() {
 	return gulp.src(config.paths.build + 'vendors.js')

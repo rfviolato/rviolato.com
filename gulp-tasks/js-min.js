@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 var config = require('./config');
 
 /* Task */
-gulp.task('js-min', jsMinTask);
+gulp.task('js-min', ['js-concat'], jsMinTask);
 
 function jsMinTask() {
 	return gulp.src(config.paths.build + 'scripts.js')
