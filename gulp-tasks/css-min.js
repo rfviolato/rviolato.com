@@ -18,11 +18,11 @@ function cssMinTask() {
         cascade: false
     };
 
-	return gulp.src(config.paths.src + config.paths.css + 'main.css')
+	return gulp.src(config.paths.src + config.paths.css + config.files.src.css)
 			   .pipe(sourcemaps.init())
 			   .pipe(autoprefixer(autoprefixerOptions))
 			   .pipe(cssMin())
-			   .pipe(rename('main.min.css'))
+			   .pipe(rename(config.files.dist.css))
 			   .pipe(sourcemaps.write('.'))
-			   .pipe(gulp.dest(config.paths.dist + 'build/'));
+			   .pipe(gulp.dest(config.paths.dist + config.paths.styles));
 }

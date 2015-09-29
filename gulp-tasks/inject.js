@@ -17,10 +17,10 @@ function injectTask() {
 
 function injectDist() {
   var files = [
-    config.paths.dist + 'build/scripts.min.js',
-    config.paths.dist + 'build/vendors.min.js',
-    config.paths.dist + 'build/main.min.css',
-    config.paths.dist + 'build/main.min.css.map',
+    config.paths.dist + config.paths.scripts + 'scripts.min.js',
+    config.paths.dist + config.paths.scripts + 'vendors.min.js',
+    config.paths.dist + config.paths.styles + 'main.min.css',
+    config.paths.dist + config.paths.styles + 'main.min.css.map',
   ];
   var sources = gulp.src(files, {read: false});
  
