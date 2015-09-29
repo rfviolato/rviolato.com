@@ -1,6 +1,7 @@
 /* Dependencies */
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+var html = require('gulp-htmlmin');
 var inject = require('gulp-inject');
 var bowerFiles = require('main-bower-files');
 
@@ -16,17 +17,17 @@ function injectTask() {
 
 function injectDist() {
   var files = [
-    config.paths.build + 'scripts.min.js',
-    config.paths.build + 'vendors.min.js',
-    config.paths.build + 'main.min.css',
-    config.paths.build + 'main.min.css.map',
+    config.paths.dist + 'build/scripts.min.js',
+    config.paths.dist + 'build/vendors.min.js',
+    config.paths.dist + 'build/main.min.css',
+    config.paths.dist + 'build/main.min.css.map',
   ];
-  var target = gulp.src(config.paths.dist + 'index.html');
   var sources = gulp.src(files, {read: false});
  
-  return target
-         .pipe(inject(sources))
-         .pipe(gulp.dest(config.paths.dist));
+  return gulp.src(config.paths.src + 'index.html')
+             .pipe(inject(sources))
+             .pipe(html({collapseWhitespace: true}))
+             .pipe(gulp.dest(config.paths.dist));
 }
 
 function injectSrc() {
