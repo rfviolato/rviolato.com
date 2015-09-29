@@ -11,9 +11,9 @@ var config = require('./config');
 gulp.task('js-min', ['js-concat'], jsMinTask);
 
 function jsMinTask() {
-	return gulp.src(config.paths.dist + 'build/scripts.js')
+	return gulp.src(config.paths.dist + config.paths.scripts + 'scripts.js')
 		   	   .pipe(ngmin())
 		   	   .pipe(uglify())
-		   	   .pipe(rename('scripts.min.js'))
-		   	   .pipe(gulp.dest(config.paths.dist + 'build/'));
+		   	   .pipe(rename(config.files.dist.scripts))
+		   	   .pipe(gulp.dest(config.paths.dist + config.paths.scripts));
 }
