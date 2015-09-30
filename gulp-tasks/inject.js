@@ -31,5 +31,15 @@ function injectDist() {
 }
 
 function injectSrc() {
-  
+  var files = [
+    config.paths.temp + config.paths.scripts + 'vendors.js',
+    config.paths.temp + config.paths.scripts + 'scripts.js',
+    config.paths.temp + config.paths.styles + 'main.css',
+    config.paths.temp + config.paths.styles + 'main.css.map',
+  ];
+  var sources = gulp.src(files, {read: false, cwd: config.paths.src});
+ 
+  return gulp.src(config.paths.src + 'index.html')
+             .pipe(inject(sources))
+             .pipe(gulp.dest(config.paths.src));
 }

@@ -5,6 +5,7 @@ var paths = {
 	styles: 'styles/',
 	sass: 'styles/sass/',
 	css: 'styles/css/',
+	temp: '.tmp/',
 };
 
 var files = {

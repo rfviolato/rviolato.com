@@ -17,20 +17,20 @@ angular.module('rviolatocomApp')
 
     return directive;
 
-    function postLink(scope, element) {
+    function postLink($scope, element) {
         var x = 0;
         var y = 0;
-        scope.tooltip = {
+        $scope.tooltip = {
           showing: false,
         };
-        var $tooltip = scope.$on('tooltip', tooltip);
+        var $tooltip = $scope.$on('tooltip', tooltip);
         $scope.$on('$destroy', destroy);
         document.addEventListener('mousemove', mousemove);
 
         function mousemove(_event){
           x = _event.pageX || _event.clientX;
           y = _event.pageY || _event.clientY;
-          if(scope.tooltip.showing){
+          if($scope.tooltip.showing){
             moveTooltip();
           }
         }
@@ -40,13 +40,13 @@ angular.module('rviolatocomApp')
             element.text(_data.text);
             moveTooltip();
             element.addClass('show');
-            scope.$apply(function(){
-              scope.tooltip.showing = true;
+            $scope.$apply(function(){
+              $scope.tooltip.showing = true;
             });
           }else{
             element.removeClass('show');
-            scope.$apply(function(){
-              scope.tooltip.showing = false;
+            $scope.$apply(function(){
+              $scope.tooltip.showing = false;
             });
           }
         }

@@ -9,7 +9,8 @@ var config = require('./config');
 gulp.task('js-concat', jsConcatTask);
 
 function jsConcatTask() {
+	var dest = config.paths.src + config.paths.temp + config.paths.scripts;
 	return gulp.src(config.paths.src + config.paths.scripts + '/**/*.js')
 		   .pipe(concat('scripts.js'))
-		   .pipe(gulp.dest(config.paths.dist + config.paths.scripts));
+		   .pipe(gulp.dest(dest));
 }

@@ -10,7 +10,8 @@ var config = require('./config');
 gulp.task('vendors-concat', vendorsTask);
 
 function vendorsTask() {
+	var dest = config.paths.src + config.paths.temp + config.paths.scripts;
 	return gulp.src(bowerFiles())
 		   .pipe(concat('vendors.js'))
-		   .pipe(gulp.dest(config.paths.dist + 'build/'));
+		   .pipe(gulp.dest(dest));
 }
