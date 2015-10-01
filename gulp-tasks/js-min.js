@@ -11,7 +11,7 @@ var config = require('./config');
 gulp.task('js-min', ['js-concat'], jsMinTask);
 
 function jsMinTask() {
-	var dest = config.paths.src + config.paths.temp + config.paths.scripts;
+	var dest = config.paths.dist + config.paths.scripts;
 	var src = config.paths.src + config.paths.temp + config.paths.scripts;
 	return gulp.src(src + 'scripts.js')
 		   	   .pipe(ngmin())

@@ -10,5 +10,5 @@ gulp.task('clean-tmp', cleanTmpTask);
 
 function cleanTmpTask() {
 	return gulp.src(config.paths.src + config.paths.temp)
-		   .pipe(clean());
+		   	   .pipe(clean());
 }

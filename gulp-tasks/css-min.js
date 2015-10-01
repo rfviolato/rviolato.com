@@ -12,7 +12,7 @@ var config = require('./config');
 gulp.task('css-min', ['sass', 'fonts'], cssMinTask);
 
 function cssMinTask() {
-	var dest = config.paths.src + config.paths.temp + config.paths.styles;
+	var dest = config.paths.dist + config.paths.styles;
 	var src = config.paths.src + config.paths.temp + config.paths.styles;
 	var autoprefixerOptions = {
         browsers: ['last 2 versions'],
