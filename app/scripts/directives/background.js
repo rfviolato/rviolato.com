@@ -22,10 +22,11 @@ angular.module('rviolatocomApp')
 
     function postLink(scope, element) {
       var url = window.getComputedStyle(element[0]).backgroundImage
-        .replace('url(', '')
-        .replace(')', '')
-        .replace(/"/g, '');
+                .replace('url(', '')
+                .replace(')', '')
+                .replace(/"/g, '');
       var dummyImg = document.createElement('img');
+      
       dummyImg.addEventListener('load', load);
       dummyImg.addEventListener('error', error);
       dummyImg.src = url;
@@ -35,11 +36,11 @@ angular.module('rviolatocomApp')
       }
 
       function load(){
-          element.css('background-image', 'url('+url+')');
-          element.addClass('loaded');
-          $rootScope.$broadcast('background-load', {
-            status: 'loaded',
-          });
+        element.css('background-image', 'url('+url+')');
+        element.addClass('loaded');
+        $rootScope.$broadcast('background-load', {
+          status: 'loaded',
+        });
       }
 
       function error(){

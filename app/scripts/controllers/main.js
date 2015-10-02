@@ -157,7 +157,9 @@ angular.module('rviolatocomApp')
       }
 
       function bgLoad(){
-        vm.pageLoaded = true;
+        $scope.$apply(function() {
+          vm.pageLoaded = true;
+        });
       }
 
       function openHeaderMenu(menu){

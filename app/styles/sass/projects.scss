@@ -139,20 +139,20 @@
 		&:hover{ opacity: 1; }
 		&.cachola{
 			.front-image{
-				background-image: url($fontPath + 'cachola.jpg');
+				background-image: url($imagePath + 'cachola.jpg');
 			}
 			.project-background{
 				opacity:.1;
-				background-image: url($fontPath + 'projectBG_cachola.png');
+				background-image: url($imagePath + 'projectBG_cachola.png');
 			}
 		}
 		&.pagarme{
 			.front-image{
-				background-image: url($fontPath + 'pagarme.jpg');
+				background-image: url($imagePath + 'pagarme.jpg');
 			}
 			.project-background{
 				opacity:.125;
-				background-image: url($fontPath + 'projectBG_pagarme.png');
+				background-image: url($imagePath + 'projectBG_pagarme.png');
 			}						
 		}		
 		&.clicked{ border-radius: 2px; left:0; opacity:1 !important;}

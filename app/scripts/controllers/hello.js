@@ -24,7 +24,7 @@ function HelloCtrl($scope, $timeout){
 	var start = function(){
 		$timeout(function(){
 			self.state.greetings = true;
-		},200);
+		}, 200);
 		$timeout(function(){
 			self.state.ellipses = true;
 		}, 1700);
@@ -32,7 +32,7 @@ function HelloCtrl($scope, $timeout){
 	if($scope.mainController.pageLoaded){
 		start();
 	}else{
-		$scope.$on('background-load', start);		
+		$scope.$on('background-load', start);
 	}
 
 }
@@ -45,6 +45,6 @@ function config($routeProvider){
 	    templateUrl: 'views/hello.html',
 	    controller: 'HelloCtrl',
 	    controllerAs: 'helloController',
-	    resolve: HelloCtrl.init,
+	    // resolve: HelloCtrl.init,
 	  });
 }
