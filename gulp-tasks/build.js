@@ -6,7 +6,8 @@ var taskList = [
 	'clean-tmp',
 	'js-min',
 	'css-min',
-	'vendors-min'
+	'vendors-min',
+	'inject'
 ];
 
 /* Task */
