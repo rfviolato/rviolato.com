@@ -34,10 +34,16 @@ function browserDev() {
         port: 9000
     };
     var cssFiles = config.paths.src + config.paths.sass + '**/*.scss';
+    var scriptFiles = config.paths.src + config.paths.scripts + '**/*.js';
 
     //watch styles
     watch(cssFiles, function() {
     	gulp.start(['sass'], browser.reload);
+    });
+
+    //watch scripts
+    watch(scriptFiles, function() {
+    	gulp.start(['js-concat'], browser.reload);
     });
 
     browser(browserConfig);

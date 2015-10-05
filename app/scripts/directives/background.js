@@ -22,9 +22,9 @@ angular.module('rviolatocomApp')
 
     function postLink(scope, element) {
       var url = window.getComputedStyle(element[0]).backgroundImage
-                .replace('url(', '')
-                .replace(')', '')
-                .replace(/"/g, '');
+                      .replace('url(', '')
+                      .replace(')', '')
+                      .replace(/"/g, '');
       var dummyImg = document.createElement('img');
       
       dummyImg.addEventListener('load', load);
