@@ -21,9 +21,10 @@ function browserDist() {
         },
         port: 8000
     };
-    browser(browserConfig);
 
-    console.log('### Distribution Development Started ###');
+    browser(browserConfig, function() {
+    	console.log('##### Distribution Development Started #####');
+    });
 }
 
 function browserDev() {
@@ -46,7 +47,7 @@ function browserDev() {
     	gulp.start(['js-concat'], browser.reload);
     });
 
-    browser(browserConfig);
-
-    console.log('### Local Development Started ###');
+    browser(browserConfig, function() {
+    	console.log('##### Local Development Started #####');
+    });
 }
