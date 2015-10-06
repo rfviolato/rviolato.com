@@ -17,8 +17,8 @@ function injectTask() {
 
 function injectDist() {
   var files = [
-    config.paths.scripts + 'scripts.min.js',
     config.paths.scripts + 'vendors.min.js',
+    config.paths.scripts + 'scripts.min.js',
     config.paths.styles + 'main.min.css',
     config.paths.styles + 'main.min.css.map',
   ];

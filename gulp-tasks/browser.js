@@ -23,7 +23,9 @@ function browserDist() {
     };
 
     browser(browserConfig, function() {
-    	console.log('##### Distribution Development Started #####');
+    	console.log('\n###################################################');
+    	console.log('##### Distribution Development Server Started #####');
+    	console.log('###################################################');
     });
 }
 
@@ -48,6 +50,8 @@ function browserDev() {
     });
 
     browser(browserConfig, function() {
-    	console.log('##### Local Development Started #####');
+    	console.log('\n#########################################');
+    	console.log('##### App Development ServerStarted #####');
+    	console.log('#########################################');
     });
 }

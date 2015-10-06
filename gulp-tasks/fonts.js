@@ -8,6 +8,6 @@ var config = require('./config');
 gulp.task('fonts', fontsTask);
 
 function fontsTask() {
-	return gulp.src(config.paths.src + config.paths.styles + 'fonts/*.*')
+	return gulp.src(config.paths.src + 'fonts/*.*')
 			   .pipe(gulp.dest(config.paths.dist + 'fonts/'));
 }

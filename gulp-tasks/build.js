@@ -6,6 +6,7 @@ var taskList = [
 	'clean-tmp',
 	'js-min',
 	'css-min',
+	'fonts',
 	'vendors-min',
 	'inject'
 ];

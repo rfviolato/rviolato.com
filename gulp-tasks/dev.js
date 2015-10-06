@@ -14,19 +14,16 @@ function devApp() {
 		'sass',
 		'js-concat',
 		'vendors-concat',
-		'inject',
-		'browser'
+		'inject'
 	];
 	
-	gulp.start(tasks);	
+	gulp.start(tasks, 'browser');	
 }
 
 function devDist() {
 	var tasks = [
-		'build',
-		'inject',
-		'browser'
+		'build'
 	];
 	
-	gulp.start(tasks);
+	gulp.start(tasks, 'browser');
 }
