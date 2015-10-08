@@ -1,6 +1,5 @@
 /* Dependencies */
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var html = require('gulp-htmlmin');
 var inject = require('gulp-inject');
 var bowerFiles = require('main-bower-files');
@@ -9,11 +8,8 @@ var bowerFiles = require('main-bower-files');
 var config = require('./config');
 
 /* Task */
-gulp.task('inject', injectTask);
-
-function injectTask() {
-  gutil.env.dist ? injectDist() : injectSrc();
-}
+gulp.task('inject', injectSrc);
+gulp.task('inject:dist', injectDist);
 
 function injectDist() {
   var files = [
