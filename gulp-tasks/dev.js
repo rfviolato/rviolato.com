@@ -1,5 +1,6 @@
 /* Dependencies */
 var gulp = require('gulp');
+var sequence = require('run-sequence');
 
 gulp.task('dev', devApp);
 gulp.task('dev:dist', devDist);
@@ -11,8 +12,8 @@ function devApp() {
 		'vendors-concat',
 		'inject'
 	];
-	
-	gulp.start(tasks, 'browser');	
+
+	sequence(tasks, 'browser');
 }
 
 function devDist() {
@@ -20,5 +21,5 @@ function devDist() {
 		'build'
 	];
 	
-	gulp.start(tasks, 'browser:dist');
+	sequence(tasks, 'browser:dist');
 }
