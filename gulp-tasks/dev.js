@@ -1,13 +1,8 @@
 /* Dependencies */
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 
-
-gulp.task('dev', devTask);
-
-function devTask() {
-	gutil.env.dist ? devDist() : devApp();
-}
+gulp.task('dev', devApp);
+gulp.task('dev:dist', devDist);
 
 function devApp() {
 	var tasks = [
@@ -17,7 +12,7 @@ function devApp() {
 		'inject'
 	];
 	
-	return gulp.start(tasks, 'browser');	
+	gulp.start(tasks, 'browser');	
 }
 
 function devDist() {
@@ -25,5 +20,5 @@ function devDist() {
 		'build'
 	];
 	
-	return gulp.start(tasks, 'browser');
+	gulp.start(tasks, 'browser:dist');
 }

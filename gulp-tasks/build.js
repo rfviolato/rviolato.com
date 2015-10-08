@@ -8,7 +8,7 @@ var taskList = [
 	'css-min',
 	'fonts',
 	'vendors-min',
-	'inject'
+	'inject:dist'
 ];
 
 /* Task */
