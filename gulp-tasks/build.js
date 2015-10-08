@@ -5,9 +5,11 @@ var taskList = [
 	'clean-build',
 	'clean-tmp',
 	'js-min',
+	'vendors-min',
 	'css-min',
 	'fonts',
-	'vendors-min',
+	'images',
+	'html',
 	'inject:dist'
 ];
 
