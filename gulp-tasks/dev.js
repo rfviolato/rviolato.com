@@ -17,7 +17,7 @@ function devApp() {
 		'inject'
 	];
 	
-	gulp.start(tasks, 'browser');	
+	return gulp.start(tasks, 'browser');	
 }
 
 function devDist() {
@@ -25,5 +25,5 @@ function devDist() {
 		'build'
 	];
 	
-	gulp.start(tasks, 'browser');
+	return gulp.start(tasks, 'browser');
 }

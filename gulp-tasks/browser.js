@@ -1,6 +1,5 @@
 /* Dependencies */
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var watch = require('gulp-watch');
 var browser = require('browser-sync');
 
@@ -8,11 +7,8 @@ var browser = require('browser-sync');
 var config = require('./config');
 
 /* Task */
-gulp.task('browser', browserTask);
-
-function browserTask() {
-	(gutil.env.dist) ? browserDist() : browserDev();
-}
+gulp.task('browser', browserDev);
+gulp.task('browser:dist', browserDist);
 
 function browserDist() {
     var browserConfig = {
@@ -22,7 +18,7 @@ function browserDist() {
         port: 8000
     };
 
-    browser(browserConfig, function() {
+    return browser(browserConfig, function() {
     	console.log('\n###################################################');
     	console.log('##### Distribution Development Server Started #####');
     	console.log('###################################################');
@@ -49,7 +45,7 @@ function browserDev() {
     	gulp.start(['js-concat'], browser.reload);
     });
 
-    browser(browserConfig, function() {
+    return browser(browserConfig, function() {
     	console.log('\n#########################################');
     	console.log('##### App Development ServerStarted #####');
     	console.log('#########################################');
