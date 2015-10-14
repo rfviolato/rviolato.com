@@ -20,6 +20,11 @@ angular
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
       $locationProvider.html5Mode(false);
       $routeProvider
+        .when('/', {
+          templateUrl: 'views/hello.html',
+          controller: 'HelloCtrl',
+          controllerAs: 'helloController',
+        })
         .when('/projects', {
           templateUrl: 'views/projects.html',
           controller: 'ProjectsCtrl',

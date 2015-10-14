@@ -7,7 +7,6 @@
  * # HelloCtrl
  * Controller of the rviolatocomApp
  */
-
 angular.module('rviolatocomApp')
   .controller('HelloCtrl', HelloCtrl)
   .config(config);
