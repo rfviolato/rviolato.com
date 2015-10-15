@@ -13,3 +13,4 @@ require('./gulp-tasks/browser.js');
 require('./gulp-tasks/inject.js');
 require('./gulp-tasks/build.js');
 require('./gulp-tasks/dev.js');
+require('./gulp-tasks/deploy.js');

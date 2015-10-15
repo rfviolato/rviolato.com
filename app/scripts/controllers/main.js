@@ -154,7 +154,6 @@ angular.module('rviolatocomApp')
       function routeChangeSuccess() {
         vm.loadingRoutePage = false;
         vm.currentPage = $location.path().replace('/', '');
-        console.log(vm.currentPage);
       }
 
       function bgLoad(){
