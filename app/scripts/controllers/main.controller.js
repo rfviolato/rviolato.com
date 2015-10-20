@@ -7,13 +7,6 @@ angular.module('rviolatocomApp')
 
   function MainCtrl($rootScope, $scope, mainSvc, $location) {
       var vm = this;
-      vm.currentPage = mainSvc.currentPage;
-      vm.pageLoaded = mainSvc.pageLoaded;
-      vm.header = mainSvc.header
-      vm.setLanguage = mainSvc.setLanguage;
-      vm.texts = mainSvc.texts;
-      vm.language = mainSvc.language;
-
       var events = [
         $rootScope.$on('$routeChangeStart', routeChangeStart),
         $rootScope.$on( '$routeChangeSuccess', routeChangeSuccess),
@@ -25,18 +18,20 @@ angular.module('rviolatocomApp')
       //start with english texts
       mainSvc.setLanguage('eng');
 
+      vm = mainSvc;
+
       function routeChangeStart(){
         vm.loadingRoutePage = true;
       }
 
       function routeChangeSuccess() {
         vm.loadingRoutePage = false;
-        vm.currentPage = $location.path().replace('/', '');
+        mainSvc.currentPage = $location.path().replace('/', '');
       }
 
       function bgLoad(){
         $scope.$apply(function() {
-          vm.pageLoaded = true;
+          mainSvc.pageLoaded = true;
         });
       }
 
