@@ -21,7 +21,7 @@ function injectDist() {
   var sources = gulp.src(files, {read: false, cwd: config.paths.dist});
  
   return gulp.src(config.paths.src + 'index.html')
-             .pipe(inject(sources))
+             .pipe(inject(sources, {addRootSlash: false}))
              .pipe(html({collapseWhitespace: true}))
              .pipe(gulp.dest(config.paths.dist));
 }

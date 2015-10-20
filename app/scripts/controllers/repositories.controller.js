@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name rviolatocomApp.controller:RepositoriesCtrl
- * @description
- * # RepositoriesCtrl
- * Controller of the rviolatocomApp
- */
 angular.module('rviolatocomApp')
   .controller('RepositoriesCtrl', RepositoriesCtrl);
 

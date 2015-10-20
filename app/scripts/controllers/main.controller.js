@@ -1,6 +1,5 @@
 'use strict';
 
-
 var multiLanguage = {
     /* PORTUGUESE TEXTS */
     pt: {
@@ -102,15 +101,6 @@ var multiLanguage = {
     },
 };
 
-
-
-/**
- * @ngdoc function
- * @name rviolatocomApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the rviolatocomApp
- */
 angular.module('rviolatocomApp')
   .controller('MainCtrl', MainCtrl);
 

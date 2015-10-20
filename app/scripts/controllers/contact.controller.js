@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name rviolatocomApp.controller:ContactCtrl
- * @description
- * # ContactCtrl
- * Controller of the rviolatocomApp
- */
 angular.module('rviolatocomApp')
   .controller('ContactCtrl', ContactCtrl);
 

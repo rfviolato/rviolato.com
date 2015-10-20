@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name rviolatocomApp.controller:HelloCtrl
- * @description
- * # HelloCtrl
- * Controller of the rviolatocomApp
- */
 angular.module('rviolatocomApp')
   .controller('HelloCtrl', HelloCtrl)
   .config(config);

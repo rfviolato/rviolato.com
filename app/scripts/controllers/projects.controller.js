@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name rviolatocomApp.controller:ProjectsCtrl
- * @description
- * # ProjectsCtrl
- * Controller of the rviolatocomApp
- */
 angular.module('rviolatocomApp')
   .controller('ProjectsCtrl', ProjectsCtrl);
 
