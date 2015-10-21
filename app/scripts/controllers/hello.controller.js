@@ -4,24 +4,25 @@ angular.module('rviolatocomApp')
   .controller('HelloCtrl', HelloCtrl)
   .config(config);
 
-HelloCtrl.$inject = ['$scope', '$timeout'];
+HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc'];
 
-function HelloCtrl($scope, $timeout){
-	var self = this;
-	$scope.mainController.menuOpened = false;
-	self.state = {
+function HelloCtrl($scope, $timeout, mainSvc){
+	var vm = this;
+	mainSvc.menuOpened = false;
+	vm.state = {
 		greetings: false,
 		ellipses: false,
 	};
 	var start = function(){
+		console.log('OK!');
 		$timeout(function(){
-			self.state.greetings = true;
+			vm.state.greetings = true;
 		}, 200);
 		$timeout(function(){
-			self.state.ellipses = true;
+			vm.state.ellipses = true;
 		}, 1700);
 	};
-	if($scope.mainController.pageLoaded){
+	if(mainSvc.pageLoaded){
 		start();
 	}else{
 		$scope.$on('background-load', start);

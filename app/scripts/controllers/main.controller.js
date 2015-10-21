@@ -21,11 +21,11 @@ angular.module('rviolatocomApp')
       vm = mainSvc;
 
       function routeChangeStart(){
-        vm.loadingRoutePage = true;
+        mainSvc.loadingRoutePage = true;
       }
 
       function routeChangeSuccess() {
-        vm.loadingRoutePage = false;
+        mainSvc.loadingRoutePage = false;
         mainSvc.currentPage = $location.path().replace('/', '');
       }
 
