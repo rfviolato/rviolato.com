@@ -1,10 +1,10 @@
-<article id="repos" data-ng-show="mainController.pageLoaded">
+<article id="repos" data-ng-show="main.global.pageLoaded">
 	<div class="middle v-align-wrapper height100">
 		<div class="v-align">
-			<div class="section-title" data-ng-bind="mainController.texts.repositories.titleText"></div>
-			<div class="section-description" data-ng-bind-html="mainController.texts.repositories.descriptionText"></div>
+			<div class="section-title" data-ng-bind="main.global.texts.repositories.titleText"></div>
+			<div class="section-description" data-ng-bind-html="main.global.texts.repositories.descriptionText"></div>
 			<div class="repos-wrapper" repositories>
-				<a class="repository" data-ng-repeat="repo in repoCtrl.repos track by $index" href="{{repo.html_url}}" target="_blank" ng-style="{'transition': 'transform 1000ms cubic-bezier(0.230, 1.000, 0.320, 1.000)' + ($index*30) + 'ms, opacity 1000ms cubic-bezier(0.230, 1.000, 0.320, 1.000)' + ($index*30) + 'ms, border-color 300ms ease, color 300ms ease'}">
+				<a class="repository" data-ng-repeat="repo in repos.repos track by $index" href="{{repo.html_url}}" target="_blank" ng-style="{'transition': 'transform 1000ms cubic-bezier(0.230, 1.000, 0.320, 1.000)' + ($index*30) + 'ms, opacity 1000ms cubic-bezier(0.230, 1.000, 0.320, 1.000)' + ($index*30) + 'ms, border-color 300ms ease, color 300ms ease'}">
 					<span ng-bind="repo.name"></span>
 				</a>
 			</div>

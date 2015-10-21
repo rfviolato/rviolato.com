@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('rviolatocomApp')
-    .service('repositoriesSvc', repositoriesService);
+    .service('reposSvc', reposService);
 
-function repositoriesService() {
+    reposService.$inject = ['$http'];
 
-}
+	function reposService($http) {
+		var self = this;
+
+		self.getRepos = $http.get('https://api.github.com/users/rfviolato/repos');
+	}

@@ -13,7 +13,7 @@ angular.module('rviolatocomApp')
 
   function background($rootScope, $timeout) {
     var directive = {
-      restrict: 'C',
+      restrict: 'AEC',
       replace: true,
       link: postLink
     };

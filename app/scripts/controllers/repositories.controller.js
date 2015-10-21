@@ -3,19 +3,16 @@
 angular.module('rviolatocomApp')
   .controller('RepositoriesCtrl', RepositoriesCtrl);
 
-  RepositoriesCtrl.$inject = ['$scope', '$http'];
+  RepositoriesCtrl.$inject = ['$scope', 'mainSvc', 'reposSvc'];
 
-  function RepositoriesCtrl($scope, $http) {
+  function RepositoriesCtrl($scope, mainSvc, reposSvc) {
       var self = this;
       var isPagarme = new RegExp(/pagarme-ng-/);
-      $scope.mainController.header.menuOpened = false;
+      mainSvc.header.menuOpened = false;
 
-      var gitPromise = $http.get('https://api.github.com/users/rfviolato/repos');
-
-      gitPromise.success(getRepos);
+      reposSvc.getRepos.success(getRepos);
 
       function getRepos(repos){
-          
          self.repos = [];
          repos.forEach(function(repo){
             if(repo.owner.login === 'rfviolato'){
@@ -28,6 +25,5 @@ angular.module('rviolatocomApp')
         });
 
         $scope.$broadcast('repos-arrived');
-
       }
   }
