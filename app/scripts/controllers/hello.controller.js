@@ -2,7 +2,6 @@
 
 angular.module('rviolatocomApp')
   .controller('HelloCtrl', HelloCtrl)
-  .config(config);
 
 HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc', 'helloSvc'];
 
@@ -26,15 +25,4 @@ function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 			helloSvc.state.ellipses = true;
 		}, 1700);
 	}
-}
-
-config.$inject = ['$routeProvider'];
-
-function config($routeProvider){
-	$routeProvider	
-	  .when('/', {
-	    templateUrl: 'views/hello.html',
-	    controller: 'HelloCtrl',
-	    controllerAs: 'hello'
-	  });
 }

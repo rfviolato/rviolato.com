@@ -23,7 +23,7 @@ angular
         .when('/', {
           templateUrl: 'views/hello.html',
           controller: 'HelloCtrl',
-          controllerAs: 'helloController',
+          controllerAs: 'hello',
         })
         .when('/contact', {
           templateUrl: 'views/contact.html',
