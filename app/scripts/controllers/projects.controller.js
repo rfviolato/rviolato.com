@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('rviolatocomApp')
-  .controller('ProjectsCtrl', ProjectsCtrl)
-  .config(config);
+  .controller('ProjectsCtrl', ProjectsCtrl);
 
   ProjectsCtrl.$inject = ['mainSvc', 'projectsSvc'];
 
@@ -12,15 +11,4 @@ angular.module('rviolatocomApp')
     vm.data = projectsSvc;
 
     mainSvc.header.menuOpened = false;
-  }
-
-  config.$inject = ['$routeProvider'];
-
-  function config($routeProvider) {
-    $routeProvider
-      .when('/projects', {
-        templateUrl: 'views/projects.html',
-        controller: 'ProjectsCtrl',
-        controllerAs: 'projects',
-      });
   }

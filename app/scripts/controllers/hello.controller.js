@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rviolatocomApp')
-  .controller('HelloCtrl', HelloCtrl)
+  .controller('HelloCtrl', HelloCtrl);
 
 HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc', 'helloSvc'];
 

@@ -25,15 +25,20 @@ angular
           controller: 'HelloCtrl',
           controllerAs: 'hello',
         })
+        .when('/projects', {
+          templateUrl: 'views/projects.html',
+          controller: 'ProjectsCtrl',
+          controllerAs: 'projects',
+        })
         .when('/contact', {
           templateUrl: 'views/contact.html',
           controller: 'ContactCtrl',
-          controllerAs: 'contactController',
+          controllerAs: 'contact',
         })
         .when('/repositories', {
           templateUrl: 'views/repositories.html',
           controller: 'RepositoriesCtrl',
-          controllerAs: 'repoCtrl',
+          controllerAs: 'repos',
         })
         .otherwise({
           redirectTo: '/'

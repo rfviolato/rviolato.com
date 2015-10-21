@@ -9,9 +9,9 @@
 angular.module('rviolatocomApp')
   .directive('background', background);
 
-  background.$inject = ['$rootScope'];
+  background.$inject = ['$rootScope', '$timeout'];
 
-  function background($rootScope) {
+  function background($rootScope, $timeout) {
     var directive = {
       restrict: 'C',
       replace: true,
@@ -38,9 +38,11 @@ angular.module('rviolatocomApp')
       function load(){
         element.css('background-image', 'url('+url+')');
         element.addClass('loaded');
-        $rootScope.$broadcast('background-load', {
-          status: 'loaded',
-        });
+        $timeout(function() {
+          $rootScope.$broadcast('background-load', {
+            status: 'loaded',
+          });
+        }, 20);
       }
 
       function error(){
