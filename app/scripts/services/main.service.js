@@ -7,7 +7,7 @@ mainService.$inject = ['$location'];
 
 function mainService($location) {
     var self = this;
-    var multiLanguage = new Lenguages();
+    var multiLanguage = new Languages();
 
     self.currentPage = $location.path().replace('/', '');
     self.pageLoaded = false;
@@ -39,7 +39,7 @@ function mainService($location) {
     }
 }
 
-function Lenguages() {
+function Languages() {
     return {
         /* PORTUGUESE TEXTS */
         pt: {

@@ -3,9 +3,9 @@
 angular.module('rviolatocomApp')
   .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$rootScope', '$scope', 'mainSvc', '$location'];
+  MainCtrl.$inject = ['$rootScope', '$scope', '$timeout', 'mainSvc', '$location'];
 
-  function MainCtrl($rootScope, $scope, mainSvc, $location) {
+  function MainCtrl($rootScope, $scope, $timeout, mainSvc, $location) {
       var vm = this;
       var events = [
         $rootScope.$on('$routeChangeStart', routeChangeStart),
@@ -30,8 +30,10 @@ angular.module('rviolatocomApp')
       }
 
       function bgLoad(){
-        $scope.$apply(function() {
-          mainSvc.pageLoaded = true;
+        $timeout(function() {
+          $scope.$apply(function() {
+            mainSvc.pageLoaded = true;
+          });
         });
       }
 
