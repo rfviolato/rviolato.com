@@ -25,11 +25,6 @@ angular
           controller: 'HelloCtrl',
           controllerAs: 'helloController',
         })
-        .when('/projects', {
-          templateUrl: 'views/projects.html',
-          controller: 'ProjectsCtrl',
-          controllerAs: 'projectsController',
-        })
         .when('/contact', {
           templateUrl: 'views/contact.html',
           controller: 'ContactCtrl',

@@ -1,39 +1,26 @@
 'use strict';
 
 angular.module('rviolatocomApp')
-  .controller('ProjectsCtrl', ProjectsCtrl);
+  .controller('ProjectsCtrl', ProjectsCtrl)
+  .config(config);
 
-  ProjectsCtrl.$inject = ['$scope', '$timeout'];
+  ProjectsCtrl.$inject = ['mainSvc', 'projectsSvc'];
 
-  function ProjectsCtrl($scope, $timeout) {
-      var vm = this;
+  function ProjectsCtrl(mainSvc, projectsSvc) {
+    var vm = this;
 
-      $scope.mainController.header.menuOpened = false;
+    vm.data = projectsSvc;
 
-      vm.projects = {
-          openedProject: -1,
-          isOpened: false,
-          phaseOne: false,
-          phaseTwo: false,
-      };
-      vm.openProject = openProject;
-      vm.closeProject = closeProject;
+    mainSvc.header.menuOpened = false;
+  }
 
-      function openProject(index){
-          vm.projects.openedProject = index;
-          vm.projects.phaseOne = true;
-          vm.projects.isOpened = true;
-          $timeout(function(){
-              vm.projects.phaseTwo = true;
-          }, 750);
-      }
+  config.$inject = ['$routeProvider'];
 
-      function closeProject(){
-          vm.projects.phaseTwo = false;
-          vm.projects.isOpened = false;
-          $timeout(function(){
-              vm.projects.openedProject = -1;
-              vm.projects.phaseOne = false;
-          },750);
-      }
-    }
+  function config($routeProvider) {
+    $routeProvider
+      .when('/projects', {
+        templateUrl: 'views/projects.html',
+        controller: 'ProjectsCtrl',
+        controllerAs: 'projects',
+      });
+  }
