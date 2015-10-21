@@ -7,8 +7,8 @@ angular.module('rviolatocomApp')
 
   function globalCtrl() {
     var directive = {
-      controller: 'MainCtrl as mainController',
-      controllerAs: 'mainController'
+      controller: 'MainCtrl',
+      controllerAs: 'main'
     };
 
     return directive;

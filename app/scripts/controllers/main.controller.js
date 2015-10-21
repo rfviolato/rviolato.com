@@ -7,6 +7,9 @@ angular.module('rviolatocomApp')
 
   function MainCtrl($rootScope, $scope, $timeout, mainSvc, $location) {
       var vm = this;
+
+      vm.global = mainSvc;
+
       var events = [
         $rootScope.$on('$routeChangeStart', routeChangeStart),
         $rootScope.$on( '$routeChangeSuccess', routeChangeSuccess),
@@ -17,8 +20,6 @@ angular.module('rviolatocomApp')
 
       //start with english texts
       mainSvc.setLanguage('eng');
-
-      vm = mainSvc;
 
       function routeChangeStart(){
         mainSvc.loadingRoutePage = true;

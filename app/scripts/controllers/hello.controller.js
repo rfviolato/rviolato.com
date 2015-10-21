@@ -4,16 +4,13 @@ angular.module('rviolatocomApp')
   .controller('HelloCtrl', HelloCtrl)
   .config(config);
 
-HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc'];
+HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc', 'helloSvc'];
 
-function HelloCtrl($scope, $timeout, mainSvc){
+function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 	var vm = this;
 
+	vm.data = helloSvc;
 	mainSvc.menuOpened = false;
-	vm.state = {
-		greetings: false,
-		ellipses: false,
-	};
 
 	if(mainSvc.pageLoaded){
 		start();
@@ -23,10 +20,10 @@ function HelloCtrl($scope, $timeout, mainSvc){
 
 	function start(){
 		$timeout(function(){
-			vm.state.greetings = true;
+			helloSvc.state.greetings = true;
 		}, 200);
 		$timeout(function(){
-			vm.state.ellipses = true;
+			helloSvc.state.ellipses = true;
 		}, 1700);
 	}
 }
@@ -38,7 +35,6 @@ function config($routeProvider){
 	  .when('/', {
 	    templateUrl: 'views/hello.html',
 	    controller: 'HelloCtrl',
-	    controllerAs: 'helloController',
-	    // resolve: HelloCtrl.init,
+	    controllerAs: 'hello'
 	  });
 }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/.tmp/styles/main.css">
     <!-- endinject -->
   </head>
-  <body global-ctrl data-ng-class="{'loading-cursor': mainController.loadingRoutePage === true || mainController.pageLoaded === false}">
+  <body global-ctrl data-ng-class="{'loading-cursor': main.global.loadingRoutePage === true || main.global.pageLoaded === false}">
     <!--
       ###### CREDITS ########
       - BG downloaded from NASA Images
@@ -29,14 +29,14 @@
     <![endif]-->
 
     <base href="/">
-    <div data-ng-if="mainController.pageLoaded === false" class="loading height100 width100 v-align-wrapper">
+    <div data-ng-if="main.global.pageLoaded === false" class="loading height100 width100 v-align-wrapper">
       <div class="v-align text-center">
         <img src="images/loading.GIF" alt="Loading gif">
         <br />
         <span class="inline-block" style="padding-top:10px;">Loading...</span>
       </div>
     </div>
-    <div data-ng-if="mainController" class="background" data-ng-class="{'first-section': mainController.currentPage === 'repositories', 'second-section': mainController.currentPage === 'projects', 'third-section': mainController.currentPage === 'contact'}"></div>
+    <div data-ng-if="main.global" class="background" data-ng-class="{'first-section': main.global.currentPage === 'repositories', 'second-section': main.global.currentPage === 'projects', 'third-section': main.global.currentPage === 'contact'}"></div>
     <nav class="menu-header">
       <div class="middle">
         <a data-ng-cloak href="#/" class="action-button logo-wrapper v-align-wrapper height100 left">
@@ -52,7 +52,7 @@
 
             <!-- NAVIGAION -->
             <div class="menu left">
-              <div data-ng-click="mainController.header.openHeaderMenu('navigation')" data-ng-class="{'menu-opened': mainController.header.menuOpened === 'navigation'}" class="menu-trigger tooltip-trigger action-button menu-button press-effect" data-tooltip-text="{{mainController.texts.menu.navButtonTooltip}}">
+              <div data-ng-click="main.global.header.openHeaderMenu('navigation')" data-ng-class="{'menu-opened': main.global.header.menuOpened === 'navigation'}" class="menu-trigger tooltip-trigger action-button menu-button press-effect" data-tooltip-text="{{main.global.texts.menu.navButtonTooltip}}">
                 <div class="ellipse medium text-center">
                   <div class="inline-block height100">
                     <div class="v-align-wrapper height100">
@@ -61,8 +61,8 @@
                   </div>
                 </div>
               </div>
-              <div data-ng-show="mainController.header.menuOpened === 'navigation'" class="ng-hide menu-choices navigation">
-                <a href="#/repositories" data-ng-show="mainController.header.menuOpened === 'navigation'" data-ng-class="{'current-page': mainController.currentPage === 'repositories'}" class="ng-hide first-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{mainController.texts.menu.firstButtonTooltip}}">
+              <div data-ng-show="main.global.header.menuOpened === 'navigation'" class="ng-hide menu-choices navigation">
+                <a href="#/repositories" data-ng-show="main.global.header.menuOpened === 'navigation'" data-ng-class="{'current-page': main.global.currentPage === 'repositories'}" class="ng-hide first-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{main.global.texts.menu.firstButtonTooltip}}">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -71,7 +71,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="#/projects" data-ng-show="mainController.header.menuOpened === 'navigation'" data-ng-class="{'current-page': mainController.currentPage === 'projects'}" class="ng-hide second-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{mainController.texts.menu.secondButtonTooltip}}">
+                <a href="#/projects" data-ng-show="main.global.header.menuOpened === 'navigation'" data-ng-class="{'current-page': main.global.currentPage === 'projects'}" class="ng-hide second-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{main.global.texts.menu.secondButtonTooltip}}">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -80,7 +80,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="#/contact" data-ng-show="mainController.header.menuOpened === 'navigation'" data-ng-class="{'current-page': mainController.currentPage === 'contact'}" class="ng-hide third-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{mainController.texts.menu.thirdButtonTooltip}}">
+                <a href="#/contact" data-ng-show="main.global.header.menuOpened === 'navigation'" data-ng-class="{'current-page': main.global.currentPage === 'contact'}" class="ng-hide third-item choice action-button tooltip-trigger press-effect menu-button" data-tooltip-text="{{main.global.texts.menu.thirdButtonTooltip}}">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -95,7 +95,7 @@
 
             <!-- SOCIAL -->
             <div class="menu left">
-              <div data-ng-click="mainController.header.openHeaderMenu('social')" data-ng-class="{'menu-opened': mainController.header.menuOpened === 'social'}" class="menu-trigger tooltip-trigger action-button menu-button press-effect" data-tooltip-text="{{mainController.texts.menu.findButtonTooltip}}">
+              <div data-ng-click="main.global.header.openHeaderMenu('social')" data-ng-class="{'menu-opened': main.global.header.menuOpened === 'social'}" class="menu-trigger tooltip-trigger action-button menu-button press-effect" data-tooltip-text="{{main.global.texts.menu.findButtonTooltip}}">
                 <div class="ellipse medium text-center">
                   <div class="inline-block height100">
                     <div class="v-align-wrapper height100">
@@ -104,8 +104,8 @@
                   </div>
                 </div>
               </div>
-              <div data-ng-show="mainController.header.menuOpened === 'social'" class="ng-hide menu-choices social">
-                <a href="http://br.linkedin.com/pub/rafael-violato/a1/4/662/" target="_blank" data-ng-show="mainController.header.menuOpened === 'social'" class="first-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Linkedin">
+              <div data-ng-show="main.global.header.menuOpened === 'social'" class="ng-hide menu-choices social">
+                <a href="http://br.linkedin.com/pub/rafael-violato/a1/4/662/" target="_blank" data-ng-show="main.global.header.menuOpened === 'social'" class="first-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Linkedin">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -114,7 +114,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="https://github.com/rfviolato" target="_blank" data-ng-show="mainController.header.menuOpened === 'social'" class="second-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Github">
+                <a href="https://github.com/rfviolato" target="_blank" data-ng-show="main.global.header.menuOpened === 'social'" class="second-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Github">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -123,7 +123,7 @@
                     </div>
                   </div>
                 </a>
-                <a href="http://twitter.com/rviolato" target="_blank" data-ng-show="mainController.header.menuOpened === 'social'" class="third-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Twitter">
+                <a href="http://twitter.com/rviolato" target="_blank" data-ng-show="main.global.header.menuOpened === 'social'" class="third-item ng-hide choice action-button press-effect tooltip-trigger menu-button" data-tooltip-text="Twitter">
                   <div class="ellipse small text-center">
                     <div class="inline-block height100">
                       <div class="v-align-wrapper height100">
@@ -142,7 +142,7 @@
     <section data-ng-view></section>
 
     <div class="languages">
-      <span class="action-button" data-ng-click="mainController.setLanguage('pt')" data-ng-class="{'current': mainController.language === 'pt'}">PT</span>&nbsp;&nbsp;<span class="action-button" data-ng-click="mainController.setLanguage('eng')" data-ng-class="{'current': mainController.language === 'eng'}">EN</span>
+      <span class="action-button" data-ng-click="main.global.setLanguage('pt')" data-ng-class="{'current': main.global.language === 'pt'}">PT</span>&nbsp;&nbsp;<span class="action-button" data-ng-click="main.global.setLanguage('eng')" data-ng-class="{'current': main.global.language === 'eng'}">EN</span>
     </div>
 
     <div data-ng-cloak class="tooltip ng-hide" ng-show="tooltip.showing"></div>
