@@ -3,7 +3,9 @@
 angular.module('rviolatocomApp')
     .service('contactSvc', contactService);
 
-function contactService() {
+    contactService.$inject = ['mainSvc'];
+
+function contactService(mainSvc) {
 	var self = this;
 
 	self.sendingEmail = false;
@@ -38,24 +40,24 @@ function contactService() {
 	             _promise.error(emailError);
 	             
 	          }else{
-	            if($scope.mainController.language === 'pt'){
-	              $scope.mainController.texts.contact.formDescriptionText = 'Insira uma mensagem.';
+	            if(mainSvc.language === 'pt'){
+	              mainSvc.texts.contact.formDescriptionText = 'Insira uma mensagem.';
 	            }else{
-	              $scope.mainController.texts.contact.formDescriptionText = 'Insert a message.';
+	              mainSvc.texts.contact.formDescriptionText = 'Insert a message.';
 	            }
 	          }
 	       }else{
-	        if($scope.mainController.language === 'pt'){
-	          $scope.mainController.texts.contact.formDescriptionText = 'Inserir email.';
+	        if(mainSvc.language === 'pt'){
+	          mainSvc.texts.contact.formDescriptionText = 'Inserir email.';
 	        }else{
-	          $scope.mainController.texts.contact.formDescriptionText = 'Insert email.';
+	          mainSvc.texts.contact.formDescriptionText = 'Insert email.';
 	        }
 	       }
 	    }else{
-	      if($scope.mainController.language === 'pt'){
-	        $scope.mainController.texts.contact.formDescriptionText = 'Inserir nome.';
+	      if(mainSvc.language === 'pt'){
+	        mainSvc.texts.contact.formDescriptionText = 'Inserir nome.';
 	      }else{
-	        $scope.mainController.texts.contact.formDescriptionText = 'Insert name.';
+	        mainSvc.texts.contact.formDescriptionText = 'Insert name.';
 	      }
 	    }            
 	 }
@@ -67,20 +69,20 @@ function contactService() {
 	  self.email = '';
 	  self.message = '';
 
-	  if($scope.mainController.language === 'pt'){
-	    $scope.mainController.texts.contact.formDescriptionText = 'Sua mensagem foi enviada.';
+	  if(mainSvc.language === 'pt'){
+	    mainSvc.texts.contact.formDescriptionText = 'Sua mensagem foi enviada.';
 	  }else{
-	    $scope.mainController.texts.contact.formDescriptionText = 'Message sent.';
+	    mainSvc.texts.contact.formDescriptionText = 'Message sent.';
 	  }
 	}
 
 	function emailError(){
 	  self.sendingEmail = false;
 
-	  if($scope.mainController.language === 'pt'){
-	    $scope.mainController.texts.contact.formDescriptionText = 'Oops, algo errado aconteceu :/';
+	  if(mainSvc.language === 'pt'){
+	    mainSvc.texts.contact.formDescriptionText = 'Oops, algo errado aconteceu :/';
 	  }else{
-	    $scope.mainController.texts.contact.formDescriptionText = 'Oops, something wrong happened :/';
+	    mainSvc.texts.contact.formDescriptionText = 'Oops, something wrong happened :/';
 	  }
 	}
 }
