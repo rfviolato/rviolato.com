@@ -34,6 +34,10 @@ function browserDev() {
     };
     var cssFiles = config.paths.src + config.paths.sass + '**/*.scss';
     var scriptFiles = config.paths.src + config.paths.scripts + '**/*.js';
+    var htmlFiles = [
+        config.paths.src + 'index.html',
+        config.paths.src + 'views/**/*.html'
+    ];
 
     //watch styles
     watch(cssFiles, function() {
@@ -44,6 +48,9 @@ function browserDev() {
     watch(scriptFiles, function() {
     	gulp.start(['js-concat'], browser.reload);
     });
+
+    //watch views
+    watch(htmlFiles, browser.reload);
 
     return browser(browserConfig, function() {
     	console.log('\n#########################################');
