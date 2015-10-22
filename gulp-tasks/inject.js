@@ -15,8 +15,8 @@ function injectDist() {
   var files = [
     config.paths.scripts + 'vendors.min.js',
     config.paths.scripts + 'scripts.min.js',
-    config.paths.styles + 'main.min.css',
-    config.paths.styles + 'main.min.css.map',
+    config.paths.styles + 'css/main.min.css',
+    config.paths.styles + 'css/main.min.css.map',
   ];
   var sources = gulp.src(files, {read: false, cwd: config.paths.dist});
  
