@@ -1,30 +1,30 @@
-<article id="projects" data-ng-show="mainController.pageLoaded"><div class="middle v-align-wrapper height100"><div class="v-align"><div class="section-title" data-ng-bind="mainController.texts.projects.titleText"></div><div class="section-description" data-ng-bind-html="mainController.texts.projects.descriptionText"></div><div class="projects-wrapper" ng-class="{'project-opened': projectsController.projects.isOpened}"><div class="projects-holder"><div class="projects-row left"><project ng-show="projectsController.projects.openedProject === 0 || projectsController.projects.openedProject === -1" ng-class="{'clicked': projectsController.projects.openedProject === 0 && projectsController.projects.phaseOne, 'opened': projectsController.projects.phaseTwo}" class="project second cachola"><div class="front-image tooltip-trigger" data-tooltip-text="cacho.la" ng-click="projectsController.openProject(0)" ng-show="projectsController.projects.openedProject !== 0"></div><div class="opened-content" ng-show="projectsController.projects.openedProject === 0"><div class="project-background"></div><div ng-click="projectsController.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{mainController.texts.projects.closeButtonText}}"><span>X</span></div><div class="info"><div class="v-align-wrapper height100"><div class="v-align"><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.nameTitleText"></div><div class="text">Cachola</div></div><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.whenTitleText"></div><div class="text" data-ng-bind="mainController.texts.projects.firstProject.when"></div></div><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.descriptionTitleText"></div><div class="text" data-ng-bind-html="mainController.texts.projects.firstProject.description"></div></div><a href="http://www.cacho.la" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{mainController.texts.projects.visitWebsiteText}}"><span class="inline-block height100"><div class="v-align-wrapper height100"><div class="v-align"><span class="ss-globe ss-icon"></span></div></div></span></a></div></div></div></div></project><project ng-show="projectsController.projects.openedProject === 1 || projectsController.projects.openedProject === -1" ng-class="{'clicked': projectsController.projects.openedProject === 1 && projectsController.projects.phaseOne, 'opened': projectsController.projects.phaseTwo}" class="project third pagarme"><div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projectsController.openProject(1)" ng-show="projectsController.projects.openedProject !== 1"></div><div class="opened-content" ng-show="projectsController.projects.openedProject === 1"><div class="project-background"></div><div ng-click="projectsController.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{mainController.texts.projects.closeButtonText}}"><span>X</span></div><div class="info"><div class="v-align-wrapper height100"><div class="v-align"><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.nameTitleText"></div><div class="text">Pagar.me</div></div><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.whenTitleText"></div><div class="text" data-ng-bind="mainController.texts.projects.secondProject.when"></div></div><div class="info-row"><div class="title" data-ng-bind="mainController.texts.projects.descriptionTitleText"></div><div class="text" data-ng-bind-html="mainController.texts.projects.secondProject.description"></div></div><a href="http://www.pagar.me" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{mainController.texts.projects.visitWebsiteText}}"><span class="inline-block height100"><div class="v-align-wrapper height100"><div class="v-align"><span class="ss-globe ss-icon"></span></div></div></span></a></div></div></div></div></project><!-- 						<project
-							ng-show="projectsController.projects.openedProject === 2 || projectsController.projects.openedProject === -1"
-							ng-class="{'clicked': projectsController.projects.openedProject === 2 && projectsController.projects.phaseOne, 'opened': projectsController.projects.phaseTwo}"
+<article id="projects" data-ng-show="main.global.pageLoaded"><div class="middle v-align-wrapper height100"><div class="v-align"><div class="section-title" data-ng-bind="main.global.texts.projects.titleText"></div><div class="section-description" data-ng-bind-html="main.global.texts.projects.descriptionText"></div><div class="projects-wrapper" ng-class="{'project-opened': projects.data.projects.isOpened}"><div class="projects-holder"><div class="projects-row left"><div ng-show="projects.data.projects.openedProject === 0 || projects.data.projects.openedProject === -1" ng-class="{'clicked': projects.data.projects.openedProject === 0 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}" class="project second cachola"><div class="front-image tooltip-trigger" data-tooltip-text="cacho.la" ng-click="projects.data.openProject(0)" ng-show="projects.data.projects.openedProject !== 0"></div><div class="opened-content" ng-show="projects.data.projects.openedProject === 0"><div class="project-background"></div><div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}"><span>X</span></div><div class="info"><div class="v-align-wrapper height100"><div class="v-align"><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div><div class="text">Cachola</div></div><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div><div class="text" data-ng-bind="main.global.texts.projects.firstProject.when"></div></div><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div><div class="text" data-ng-bind-html="main.global.texts.projects.firstProject.description"></div></div><a href="http://www.cacho.la" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}"><span class="inline-block height100"><div class="v-align-wrapper height100"><div class="v-align"><span class="ss-globe ss-icon"></span></div></div></span></a></div></div></div></div></div><div ng-show="projects.data.projects.openedProject === 1 || projects.data.projects.openedProject === -1" ng-class="{'clicked': projects.data.projects.openedProject === 1 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}" class="project third pagarme"><div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projects.data.openProject(1)" ng-show="projects.data.projects.openedProject !== 1"></div><div class="opened-content" ng-show="projects.data.projects.openedProject === 1"><div class="project-background"></div><div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}"><span>X</span></div><div class="info"><div class="v-align-wrapper height100"><div class="v-align"><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div><div class="text">Pagar.me</div></div><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div><div class="text" data-ng-bind="main.global.texts.projects.secondProject.when"></div></div><div class="info-row"><div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div><div class="text" data-ng-bind-html="main.global.texts.projects.secondProject.description"></div></div><a href="http://www.pagar.me" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}"><span class="inline-block height100"><div class="v-align-wrapper height100"><div class="v-align"><span class="ss-globe ss-icon"></span></div></div></span></a></div></div></div></div></div><!-- 						<div
+							ng-show="projects.data.projects.openedProject === 2 || projects.data.projects.openedProject === -1"
+							ng-class="{'clicked': projects.data.projects.openedProject === 2 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
 							class="project third foodmood"
 						>
-							<div class="front-image tooltip-trigger" data-tooltip-text="foodmood" ng-click="projectsController.openProject(2)"ng-show="projectsController.projects.openedProject !== 2"></div>
-							<div class="opened-content" ng-show="projectsController.projects.openedProject === 2">
+							<div class="front-image tooltip-trigger" data-tooltip-text="foodmood" ng-click="projects.data.openProject(2)"ng-show="projects.data.projects.openedProject !== 2"></div>
+							<div class="opened-content" ng-show="projects.data.projects.openedProject === 2">
 								<div class="project-background"></div>
-								<div ng-click="projectsController.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{mainController.texts.projects.closeButtonText}}">
+								<div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}">
 									<span>X</span>
 								</div>
 								<div class="info">
 									<div class="v-align-wrapper height100">
 										<div class="v-align">
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.nameTitleText"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div>
 												<div class="text">FoodMood</div>
 											</div>
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.whenTitleText"></div>
-												<div class="text" data-ng-bind="mainController.texts.projects.thirdProject.when"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div>
+												<div class="text" data-ng-bind="main.global.texts.projects.thirdProject.when"></div>
 											</div>
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.descriptionTitleText"></div>
-												<div class="text" data-ng-bind-html="mainController.texts.projects.thirdProject.description"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div>
+												<div class="text" data-ng-bind-html="main.global.texts.projects.thirdProject.description"></div>
 											</div>
-											<a href="http://www.foodmood.com.br" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{mainController.texts.projects.visitWebsiteText}}">
+											<a href="http://www.foodmood.com.br" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}">
 												<span class="inline-block height100">
 													<div class="v-align-wrapper height100">
 														<div class="v-align">
@@ -37,34 +37,34 @@
 									</div>
 								</div>
 							</div>
-						</project>
-						<project
-							ng-show="projectsController.projects.openedProject === 3 || projectsController.projects.openedProject === -1"
-							ng-class="{'clicked': projectsController.projects.openedProject === 3 && projectsController.projects.phaseOne, 'opened': projectsController.projects.phaseTwo}"
+						</div>
+						<div
+							ng-show="projects.data.projects.openedProject === 3 || projects.data.projects.openedProject === -1"
+							ng-class="{'clicked': projects.data.projects.openedProject === 3 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
 							class="project fourth pagarme"
 						>
-							<div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projectsController.openProject(3)" ng-show="projectsController.projects.openedProject !== 3"></div>
-							<div class="opened-content" ng-show="projectsController.projects.openedProject === 3">
+							<div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projects.data.openProject(3)" ng-show="projects.data.projects.openedProject !== 3"></div>
+							<div class="opened-content" ng-show="projects.data.projects.openedProject === 3">
 								<div class="project-background"></div>
-								<div ng-click="projectsController.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{mainController.texts.projects.closeButtonText}}">
+								<div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}">
 									<span>X</span>
 								</div>
 								<div class="info">
 									<div class="v-align-wrapper height100">
 										<div class="v-align">
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.nameTitleText"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div>
 												<div class="text">Pagar.me</div>
 											</div>
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.whenTitleText"></div>
-												<div class="text" data-ng-bind="mainController.texts.projects.fourthProject.when"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div>
+												<div class="text" data-ng-bind="main.global.texts.projects.fourthProject.when"></div>
 											</div>
 											<div class="info-row">
-												<div class="title" data-ng-bind="mainController.texts.projects.descriptionTitleText"></div>
-												<div class="text" data-ng-bind-html="mainController.texts.projects.fourthProject.description"></div>
+												<div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div>
+												<div class="text" data-ng-bind-html="main.global.texts.projects.fourthProject.description"></div>
 											</div>
-											<a href="http://www.pagar.me" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{mainController.texts.projects.visitWebsiteText}}">
+											<a href="http://www.pagar.me" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}">
 												<span class="inline-block height100">
 													<div class="v-align-wrapper height100">
 														<div class="v-align">
@@ -77,4 +77,4 @@
 									</div>
 								</div>
 							</div>
-						</project> --></div></div></div></div></div></article>
+						</div> --></div></div></div></div></div></article>
