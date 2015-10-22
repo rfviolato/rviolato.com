@@ -10,9 +10,9 @@ angular.module('rviolatocomApp')
       var isPagarme = new RegExp(/pagarme-ng-/);
       mainSvc.header.menuOpened = false;
 
-      reposSvc.getRepos.success(getRepos);
+      reposSvc.getRepos.success(reposArrived);
 
-      function getRepos(repos){
+      function reposArrived(repos){
          self.repos = [];
          repos.forEach(function(repo){
             if(repo.owner.login === 'rfviolato'){

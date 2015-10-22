@@ -46,14 +46,14 @@ function contactService() {
 	          }
 	       }else{
 	        if($scope.mainController.language === 'pt'){
-	          $scope.mainController.texts.contact.formDescriptionText = 'Insirir email.';
+	          $scope.mainController.texts.contact.formDescriptionText = 'Inserir email.';
 	        }else{
 	          $scope.mainController.texts.contact.formDescriptionText = 'Insert email.';
 	        }
 	       }
 	    }else{
 	      if($scope.mainController.language === 'pt'){
-	        $scope.mainController.texts.contact.formDescriptionText = 'Insirir nome.';
+	        $scope.mainController.texts.contact.formDescriptionText = 'Inserir nome.';
 	      }else{
 	        $scope.mainController.texts.contact.formDescriptionText = 'Insert name.';
 	      }
