@@ -18,19 +18,4 @@ angular.module('rviolatocomApp')
           $scope.$broadcast('repos-arrived');
         }
       });
-
-      function reposArrived(repos){
-         self.repos = [];
-         repos.forEach(function(repo){
-            if(repo.owner.login === 'rfviolato'){
-              if(!repo.fork){
-                self.repos.push(repo);
-              }else if(isPagarme.test(repo.name)){
-                self.repos.push(repo);
-              }
-            }
-        });
-
-        $scope.$broadcast('repos-arrived');
-      }
   }
