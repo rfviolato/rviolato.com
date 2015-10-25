@@ -41,9 +41,16 @@ angular
         templateUrl: 'views/repositories.html',
         controller: 'RepositoriesCtrl',
         controllerAs: 'repos',
+        resolve: {
+          repos: getRepos
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
 
+  }
+
+  function getRepos(reposSvc) {
+    return reposSvc.getRepos;
   }

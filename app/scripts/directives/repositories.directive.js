@@ -19,21 +19,22 @@ angular.module('rviolatocomApp')
     return directive;
 
     function postLink($scope, $element) {
-      var $repos = $scope.$on('repos-arrived', reposArrived);
+      var events = [
+        $scope.$on('repos-arrived', reposArrived)
+      ];
+      
       $scope.$on('$destroy', destroy);
 
       function reposArrived(){
-        $timeout(function(){
+        $timeout(function() {
           $element.addClass('repos-arrived');
-        }, 500);
-        $timeout(function(){
-          var h = $element.prop('offsetHeight');
-          $element.css('height', h + 'px');
-        });
+        }, 250);
       }
 
       function destroy() {
-        $repos();
+        events.forEach(function(unsubscribe) {
+          unsubscribe();
+        });
       }
     }
   }
