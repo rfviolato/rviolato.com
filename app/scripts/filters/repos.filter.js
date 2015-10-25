@@ -13,7 +13,7 @@
 	function filterRepos(repos){
 		var aux = [];
 		var isPagarme = new RegExp(/pagarme-ng-/);
-		
+
 		repos.forEach(function(repo){
 		    if(repo.owner.login === 'rfviolato'){
 		      if(!repo.fork){
@@ -23,6 +23,8 @@
 		      }
 		    }
 		});
+
+		console.log(aux);
 
 		return aux;
 	}

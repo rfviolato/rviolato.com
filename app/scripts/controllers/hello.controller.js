@@ -7,6 +7,7 @@ HelloCtrl.$inject = ['$scope', '$timeout', 'mainSvc', 'helloSvc'];
 
 function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 	var vm = this;
+	var events = [];
 
 	vm.data = helloSvc;
 	mainSvc.menuOpened = false;
@@ -14,8 +15,10 @@ function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 	if(mainSvc.pageLoaded){
 		start();
 	}else{
-		$scope.$on('background-load', start);
+		events.push($scope.$on('background-load', start));
 	}
+
+	$scope.$on('$destroy', destroy);
 
 	function start(){
 		$timeout(function(){
@@ -24,5 +27,14 @@ function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 		$timeout(function(){
 			helloSvc.state.ellipses = true;
 		}, 1700);
+	}
+
+	function destroy() {
+		helloSvc.state.greetings = false;
+		helloSvc.state.ellipses = false;
+
+		events.forEahc(function(unsubscribe) {
+			unsubscribe();
+		});
 	}
 }
