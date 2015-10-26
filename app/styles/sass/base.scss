@@ -80,7 +80,12 @@ body{
 }
 
 .loading-cursor{
-	cursor:wait !important;
+	&,
+	& *,
+	& *:after,
+	& *:before {
+		cursor:wait !important;
+	}
 }
 
 p{letter-spacing: 0.06em;}
