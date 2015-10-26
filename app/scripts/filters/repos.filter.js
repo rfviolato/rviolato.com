@@ -24,8 +24,6 @@
 		    }
 		});
 
-		console.log(aux);
-
 		return aux;
 	}
 })();

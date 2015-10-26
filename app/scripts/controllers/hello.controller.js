@@ -33,7 +33,7 @@ function HelloCtrl($scope, $timeout, mainSvc, helloSvc){
 		helloSvc.state.greetings = false;
 		helloSvc.state.ellipses = false;
 
-		events.forEahc(function(unsubscribe) {
+		events.forEach(function(unsubscribe) {
 			unsubscribe();
 		});
 	}
