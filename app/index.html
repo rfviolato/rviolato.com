@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/.tmp/styles/main.css">
     <!-- endinject -->
   </head>
-  <body global-ctrl data-ng-class="{'loading-cursor': main.global.loadingRoutePage === true || main.global.pageLoaded === false}">
+  <body data-global-ctrl data-ng-class="{'loading-cursor': main.global.loadingRoutePage === true || main.global.pageLoaded === false}">
     <!--
       ###### CREDITS ########
       - BG downloaded from NASA Images
@@ -45,7 +45,7 @@
             <div class="logo-name">rviolato</div>
           </div>-->
         </a>
-        <div class="relative v-align-wrapper height100 right">
+        <div data-navigation-wrapper class="relative v-align-wrapper height100 right">
           <div class="v-align">
 
             <!-- NAVIGAION -->
