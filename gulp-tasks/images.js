@@ -13,10 +13,10 @@ function imagesTask() {
 	var dest = config.paths.dist + config.paths.images;
 
 	return gulp.src(src)
-			   .pipe(imageop({
-			        optimizationLevel: 5,
-			        progressive: true,
-			        interlaced: true
-			    }))
+			   // .pipe(imageop({
+			   //      optimizationLevel: 5,
+			   //      progressive: true,
+			   //      interlaced: true
+			   //  }))
 			   .pipe(gulp.dest(dest));
 }

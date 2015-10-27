@@ -1,17 +1,19 @@
 /* Dependencies */
 var gulp = require('gulp');
+var sequence = require('run-sequence');
 
 var taskList = [
-	'clean-build',
-	'clean-tmp',
+	'images',
+	'js-concat',
 	'js-min',
+	'vendors-concat',
 	'vendors-min',
 	'css-min',
 	'fonts',
-	'images',
-	'html',
-	'inject:dist'
+	'html'
 ];
 
 /* Task */
-gulp.task('build', taskList);
+gulp.task('build', ['clean-build', 'clean-tmp'], function() {
+	sequence(taskList, 'inject:dist');
+});
