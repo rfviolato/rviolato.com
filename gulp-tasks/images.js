@@ -8,7 +8,7 @@ var config = require('./config');
 /* Task */
 gulp.task('images', imagesTask);
 
-function imagesTask() {
+function imagesTask(done) {
 	var src = config.paths.src + config.paths.images + '**/*';
 	var dest = config.paths.dist + config.paths.images;
 
