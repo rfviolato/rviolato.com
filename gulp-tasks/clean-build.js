@@ -9,6 +9,6 @@ var config = require('./config');
 gulp.task('clean-build', cleanBuildTask);
 
 function cleanBuildTask() {
-	return gulp.src(config.paths.dist + 'build/')
+	return gulp.src(config.paths.dist)
 		       .pipe(clean());
 }
