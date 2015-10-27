@@ -87,7 +87,7 @@
 		    color:$initialColor;
 		    padding: 8px 0 0 0 ;
 		    transition:all $options;
-		    &:hover{background-color:rgba(0,0,0, .65);}
+		    // &:hover{background-color:rgba(0,0,0, .65);}
 		}
 		.line{
 		    background-color:$finalBorderColor;
@@ -127,22 +127,24 @@
 		    line-height:24px;
 		    font-family: Sans-serif;
 		    text-align:center;
-		    margin: 0 auto ;
+		    margin: 0 auto;
+		    background-color: transparent;
+		    opacity: 0.3;
 		    border:$border solid $initialColor;
 		    border-radius: 2px;
-		    cursor:pointer;
 		    @include noSelection();
-		    &:hover{
-		      .button-face{
-		        color:$finalBorderColor;
-		      }
-		      .line.top, .line.bottom{
-		        width:$buttonWidth;      
-		      }
-		      .line.left, .line.right{
-		        height:100%;      
-		      }      
-		    }
+
+		    // &:hover{
+		    //   .button-face{
+		    //     color:$finalBorderColor;
+		    //   }
+		    //   .line.top, .line.bottom{
+		    //     width:$buttonWidth;      
+		    //   }
+		    //   .line.left, .line.right{
+		    //     height:100%;      
+		    //   }      
+		    // }
 		}			
 	}
 	.contact-info{width: 30%;height: 100%;}

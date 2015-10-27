@@ -17,7 +17,8 @@
 							<textarea placeholder="{{main.global.texts.contact.messageFieldPlaceholder}}" data-ng-model="contact.message"></textarea>
 						</div>
 						<div class="input-wrapper">
-							<div class="send-button right" data-ng-click="contact.sendEmail()">
+							<!-- data-ng-click="contact.sendEmail()" -->
+							<button data-tooltip-text="Currently unavailable" class="send-button right tooltip-trigger">
 							    <div class="lines-wrapper">
 							        <div class="line top"></div>
 							        <div class="line right"></div>
@@ -27,7 +28,7 @@
 							    <div class="button-face">
 							        <span data-ng-bind="main.global.texts.contact.buttonText"></span>
 							    </div>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>

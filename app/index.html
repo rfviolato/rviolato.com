@@ -41,9 +41,6 @@
           <div class="v-align">
             <div class="logo"></div>
           </div>
-          <!--<div class="v-align">
-            <div class="logo-name">rviolato</div>
-          </div>-->
         </a>
         <div class="relative v-align-wrapper height100 right">
           <div class="v-align">
@@ -137,12 +134,15 @@
         </div>
       </div>
     </nav>
+    <!-- VIEWS CONTAINER -->
     <section data-ng-view></section>
 
+    <!-- CHOOSE LANGUAGE -->
     <div class="languages">
       <span class="action-button" data-ng-click="main.global.setLanguage('pt')" data-ng-class="{'current': main.global.language === 'pt'}">PT</span>&nbsp;&nbsp;<span class="action-button" data-ng-click="main.global.setLanguage('eng')" data-ng-class="{'current': main.global.language === 'eng'}">EN</span>
     </div>
 
+    <!-- TOOLTIP ELEMENT -->
     <div data-ng-cloak class="tooltip ng-hide" ng-show="tooltip.showing"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
