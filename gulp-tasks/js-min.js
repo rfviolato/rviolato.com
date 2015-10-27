@@ -15,7 +15,7 @@ function jsMinTask() {
 	var src = config.paths.src + config.paths.temp + config.paths.scripts;
 	return gulp.src(src + 'scripts.js')
 		   	   .pipe(ngmin())
-		   	   .pipe(uglify())
+		   	   .pipe(uglify({mangle: false}))
 		   	   .pipe(rename(config.files.dist.scripts))
 		   	   .pipe(gulp.dest(dest));
 }
