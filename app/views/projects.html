@@ -89,13 +89,14 @@
 								</div>
 							</div>
 						</div>
+
 						<!-- Glutenfree Box -->
 						<div
 							ng-show="projects.data.projects.openedProject === 2 || projects.data.projects.openedProject === -1"
 							ng-class="{'clicked': projects.data.projects.openedProject === 2 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
 							class="project third pagarme"
 						>
-							<div class="front-image tooltip-trigger" data-tooltip-text="Glutenfree Box" ng-click="projects.data.openProject(2)"ng-show="projects.data.projects.openedProject !== 1"></div>
+							<div class="front-image tooltip-trigger" data-tooltip-text="Glutenfree Box" ng-click="projects.data.openProject(2)"ng-show="projects.data.projects.openedProject !== 2"></div>
 							<div class="opened-content" ng-show="projects.data.projects.openedProject === 2">
 								<div class="project-background"></div>
 								<div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}">

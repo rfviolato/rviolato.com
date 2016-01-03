@@ -82,7 +82,7 @@ function Languages() {
                 },
                 thirdProject: {
                     when: 'DEC/2015 - HOJE',
-                    description: 'Glutenfree Box is an online gluten-free products subscription that pretends to attend to any level of any diet restriction cuztomization<br /> Currently leading the Frontend team, i always aiming for the newest and coolest choice of stacks and technologies to both desktop and mobile product.',
+                    description: 'Glutenfree Box é um clube de assinaturas online de produtos livres de glúten e no futuro de máxima cutomização de qualquer restrição alimentar.<br />Participo na liderança da equipe de Frontend, sempre optando pela escolha vanguardista de stacks e tecnologias para tanto o produto desktop e mobile.',
                 },
             },
             contact: {
@@ -135,7 +135,7 @@ function Languages() {
                 },
                 thirdProject: {
                     when: 'DEC/2015 - NOW',
-                    description: 'Glutenfree Box is a',
+                    description: 'Glutenfree Box is an online gluten-free products subscription that pretends to attend to any level of any diet restriction customization.<br /> Currently leading the Frontend team, i always aiming for the newest and coolest choice of stacks and technologies to both desktop and mobile product.'
                 },
             },
             contact: {
