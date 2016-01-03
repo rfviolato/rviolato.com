@@ -6,10 +6,11 @@
 			<div class="projects-wrapper" ng-class="{'project-opened': projects.data.projects.isOpened}">
 				<div class="projects-holder">
 					<div class="projects-row left">
+						<!-- Cachola -->
 						<div
 							ng-show="projects.data.projects.openedProject === 0 || projects.data.projects.openedProject === -1"
 							ng-class="{'clicked': projects.data.projects.openedProject === 0 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
-							class="project second cachola"
+							class="project first cachola"
 						>
 							<div class="front-image tooltip-trigger" data-tooltip-text="cacho.la" ng-click="projects.data.openProject(0)" ng-show="projects.data.projects.openedProject !== 0"></div>
 							<div class="opened-content" ng-show="projects.data.projects.openedProject === 0">
@@ -46,10 +47,12 @@
 								</div>
 							</div>
 						</div>
+
+						<!-- Pagar.me -->
 						<div
 							ng-show="projects.data.projects.openedProject === 1 || projects.data.projects.openedProject === -1"
 							ng-class="{'clicked': projects.data.projects.openedProject === 1 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
-							class="project third pagarme"
+							class="project second pagarme"
 						>
 							<div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projects.data.openProject(1)"ng-show="projects.data.projects.openedProject !== 1"></div>
 							<div class="opened-content" ng-show="projects.data.projects.openedProject === 1">
@@ -86,12 +89,13 @@
 								</div>
 							</div>
 						</div>
-<!-- 						<div
+						<!-- Glutenfree Box -->
+						<div
 							ng-show="projects.data.projects.openedProject === 2 || projects.data.projects.openedProject === -1"
 							ng-class="{'clicked': projects.data.projects.openedProject === 2 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
-							class="project third foodmood"
+							class="project third pagarme"
 						>
-							<div class="front-image tooltip-trigger" data-tooltip-text="foodmood" ng-click="projects.data.openProject(2)"ng-show="projects.data.projects.openedProject !== 2"></div>
+							<div class="front-image tooltip-trigger" data-tooltip-text="Glutenfree Box" ng-click="projects.data.openProject(2)"ng-show="projects.data.projects.openedProject !== 1"></div>
 							<div class="opened-content" ng-show="projects.data.projects.openedProject === 2">
 								<div class="project-background"></div>
 								<div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}">
@@ -102,7 +106,7 @@
 										<div class="v-align">
 											<div class="info-row">
 												<div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div>
-												<div class="text">FoodMood</div>
+												<div class="text">Glutenfree Box</div>
 											</div>
 											<div class="info-row">
 												<div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div>
@@ -112,46 +116,6 @@
 												<div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div>
 												<div class="text" data-ng-bind-html="main.global.texts.projects.thirdProject.description"></div>
 											</div>
-											<a href="http://www.foodmood.com.br" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}">
-												<span class="inline-block height100">
-													<div class="v-align-wrapper height100">
-														<div class="v-align">
-															<span class="ss-globe ss-icon"></span>
-														</div>
-													</div>
-												</span>
-											</a>											
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div
-							ng-show="projects.data.projects.openedProject === 3 || projects.data.projects.openedProject === -1"
-							ng-class="{'clicked': projects.data.projects.openedProject === 3 && projects.data.projects.phaseOne, 'opened': projects.data.projects.phaseTwo}"
-							class="project fourth pagarme"
-						>
-							<div class="front-image tooltip-trigger" data-tooltip-text="pagar.me" ng-click="projects.data.openProject(3)" ng-show="projects.data.projects.openedProject !== 3"></div>
-							<div class="opened-content" ng-show="projects.data.projects.openedProject === 3">
-								<div class="project-background"></div>
-								<div ng-click="projects.data.closeProject()" class="close-button tooltip-trigger ellipse mouse-over" data-tooltip-text="{{main.global.texts.projects.closeButtonText}}">
-									<span>X</span>
-								</div>
-								<div class="info">
-									<div class="v-align-wrapper height100">
-										<div class="v-align">
-											<div class="info-row">
-												<div class="title" data-ng-bind="main.global.texts.projects.nameTitleText"></div>
-												<div class="text">Pagar.me</div>
-											</div>
-											<div class="info-row">
-												<div class="title" data-ng-bind="main.global.texts.projects.whenTitleText"></div>
-												<div class="text" data-ng-bind="main.global.texts.projects.fourthProject.when"></div>
-											</div>
-											<div class="info-row">
-												<div class="title" data-ng-bind="main.global.texts.projects.descriptionTitleText"></div>
-												<div class="text" data-ng-bind-html="main.global.texts.projects.fourthProject.description"></div>
-											</div>
 											<a href="http://www.pagar.me" target="_blank" class="visit-website-button ellipse mouse-over block tooltip-trigger" data-tooltip-text="{{main.global.texts.projects.visitWebsiteText}}">
 												<span class="inline-block height100">
 													<div class="v-align-wrapper height100">
@@ -160,12 +124,13 @@
 														</div>
 													</div>
 												</span>
-											</a>											
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div> -->
+						</div>
+
 					</div>
 				</div>
 			</div>

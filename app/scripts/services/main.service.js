@@ -73,12 +73,16 @@ function Languages() {
                 closeButtonText: 'Fechar',
                 visitWebsiteText: 'Acessar o site',
                 firstProject: {
-                    when: 'Em standby',
+                    when: 'JAN/2014 - JAN/2016',
                     description: 'A Cachola é uma startup de educação cujo sou co-fundador.<br />Neste projeto eu e meus sócios temos a missão de desenvolver uma nova forma de compartilar conhecimento denso de uma forma bonita e simples. Nós focamos em um novo conceito de interface, desta forma o conteúdo é claro e simples de consumir.<br />Comecei utilizando jQuery na versão beta, porém atualmente a interface está implementada com AngularJS. O layout é responsivo para resoluções de tablet.',
                 },
                 secondProject: {
-                    when: 'Atualmente trabalhando nele',
+                    when: 'ABR/2014 - DEZ/2015',
                     description: 'O Pagar.me é uma empresa de tecnologia voltada para meios de pagamento online.<br />Acreditamos que reunindo pessoas talentosas, inovação e código bem feito, podemos ter um produto imbatível no mercado',
+                },
+                thirdProject: {
+                    when: 'DEC/2015 - HOJE',
+                    description: 'Glutenfree Box is an online gluten-free products subscription that pretends to attend to any level of any diet restriction cuztomization<br /> Currently leading the Frontend team, i always aiming for the newest and coolest choice of stacks and technologies to both desktop and mobile product.',
                 },
             },
             contact: {
@@ -88,7 +92,7 @@ function Languages() {
                 buttonText: 'ENVIAR',
                 nameFieldPlaceholder: 'Nome',
                 messageFieldPlaceholder: 'Mensagem',
-            },            
+            },
         },
         /* ENGLISH TEXTS */
         eng: {
@@ -122,12 +126,16 @@ function Languages() {
                 closeButtonText: 'Close',
                 visitWebsiteText: 'Visit website',
                 firstProject: {
-                    when: 'On standby',
+                    when: 'JAN/2014 - JAN/2016',
                     description: 'Cachola is a education startup wich im one of the co-founders.<br />On this project me and my partners have the mission to develop a new way to share dense knowledge within an easy and pretty way. We focus on a new concept of interface, so the content is clear and easy to consume.<br />I started it with jQuery on the beta version, but currently its done with AngularJs and i try to focus on user-firendly functionality and keeping most of the animations on CSS. Currently the layout is tablet-resolutions responsive.',
                 },
                 secondProject: {
-                    when: 'Currently working on it',
+                    when: 'APR/2014 - DEC/2015',
                     description: 'Pagar.me is an online payment company.<br />We believe that by putting together the most talented people, inovation and good code, we can have the best product on the market.',
+                },
+                thirdProject: {
+                    when: 'DEC/2015 - NOW',
+                    description: 'Glutenfree Box is a',
                 },
             },
             contact: {
